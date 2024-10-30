@@ -1,0 +1,252 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "icb/cards",
+  "version": "1.0.3",
+  "title": "Info Cards",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "Create beautiful cards with text and image",
+  "textdomain": "info-cards",
+  "attributes": {
+    "iconDetails": {
+      "type": "string",
+      "default": "arrow_outward"
+    },
+    "iconSize": {
+      "type": "number",
+      "default": 24
+    },
+    "iconColor": {
+      "type": "string",
+      "default": "#F2E8C6"
+    },
+    "iconbgColor": {
+      "type": "string",
+      "default": "#982B1C"
+    },
+    "className": {
+      "type": "string",
+      "default": ""
+    },
+    "align": {
+      "type": "string",
+      "default": ""
+    },
+    "cards": {
+      "type": "array",
+      "default": [
+        {
+          "background": {
+            "color": "#fff"
+          },
+          "img": "",
+          "title": "Title of the card 1",
+          "desc": "Description of the card 1",
+          "btnLabal": "Button",
+          "btnUrl": "#"
+        },
+        {
+          "background": {
+            "color": "#fff"
+          },
+          "img": "",
+          "title": "Title of the card 2",
+          "desc": "Description of the card 2",
+          "btnLabal": "Button",
+          "btnUrl": "#"
+        },
+        {
+          "background": {
+            "color": "#fff"
+          },
+          "img": "",
+          "title": "Title of the card 3",
+          "desc": "Description of the card 3",
+          "btnLabal": "Button",
+          "btnUrl": "#"
+        }
+      ]
+    },
+    "layout": {
+      "type": "string",
+      "default": "vertical"
+    },
+    "theme": {
+      "type": "string",
+      "default": "default"
+    },
+    "columns": {
+      "type": "object",
+      "default": {
+        "desktop": 3,
+        "tablet": 2,
+        "mobile": 1
+      }
+    },
+    "columnGap": {
+      "type": "string",
+      "default": "20px"
+    },
+    "rowGap": {
+      "type": "string",
+      "default": "20px"
+    },
+    "isImg": {
+      "type": "boolean",
+      "default": true
+    },
+    "imgHeight": {
+      "type": "string",
+      "default": "200px"
+    },
+    "imgPos": {
+      "type": "string",
+      "default": "first"
+    },
+    "background": {
+      "type": "object",
+      "default": {
+        "color": "#FFFFFF00"
+      }
+    },
+    "padding": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0x",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "cardPadding": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "cardRadius": {
+      "type": "string",
+      "default": "8px"
+    },
+    "cardShadow": {
+      "type": "array",
+      "default": [
+        {
+          "hOffset": "0px",
+          "vOffset": "4px",
+          "blur": "8px",
+          "spreed": "0px",
+          "color": "#0003"
+        }
+      ]
+    },
+    "contentAlign": {
+      "type": "string",
+      "default": "left"
+    },
+    "contentPadding": {
+      "type": "object",
+      "default": {
+        "top": "20px",
+        "right": "15px",
+        "bottom": "15px",
+        "left": "15px"
+      }
+    },
+    "titleTypo": {
+      "type": "object",
+      "default": {
+        "fontSize": "20"
+      }
+    },
+    "titleColor": {
+      "type": "string",
+      "color": "#000"
+    },
+    "descTypo": {
+      "type": "object",
+      "default": {
+        "fontSize": "16"
+      }
+    },
+    "descColor": {
+      "type": "string",
+      "color": "#000"
+    },
+    "btnTypo": {
+      "type": "object",
+      "default": {
+        "fontSize": 15,
+        "textDecoration": "none"
+      }
+    },
+    "btnAlign": {
+      "type": "string",
+      "default": "left"
+    },
+    "btnColors": {
+      "type": "object",
+      "default": {
+        "color": "#fff",
+        "bg": "#4527a4"
+      }
+    },
+    "btnHovColors": {
+      "type": "object",
+      "default": {
+        "color": "#fff",
+        "bg": "#fe6601"
+      }
+    },
+    "btnPadding": {
+      "type": "object",
+      "default": {
+        "top": "10px",
+        "right": "15px",
+        "bottom": "10px",
+        "left": "15px"
+      }
+    },
+    "btnRadius": {
+      "type": "string",
+      "default": "8px"
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false
+  },
+  "example": {
+    "attributes": {
+      "cards": [
+        {
+          "background": {
+            "color": "#fff"
+          },
+          "img": "https://i.ibb.co/cTjwpDT/pexels-photo-97533.jpg",
+          "title": "Title of the 1 number card",
+          "desc": "Description of the 1 number card",
+          "btnLabal": "Button",
+          "btnUrl": "#"
+        }
+      ],
+      "columns": {
+        "desktop": 1,
+        "tablet": 1,
+        "mobile": 1
+      }
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./view.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
+}
