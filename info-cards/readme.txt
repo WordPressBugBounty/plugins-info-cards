@@ -1,11 +1,11 @@
 === Info Cards - Gutenberg block for creating Beautiful Cards===
-Contributors: bplugins, abuhayat ,shehabulislam
+Contributors: bplugins, abuhayat, btechnologies
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, cards, gutenberg, info, section  
 Buy me a coffee: https://www.buymeacoffee.com/abuhayat
 Requires at least: 5.9+
-Tested up to: 6.6.2
-Stable tag: 1.0.3
+Tested up to: 6.7
+Stable tag: 1.0.4
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -134,6 +134,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 == Changelog ==
 
+= 1.0.4 - 13 Nov 2024 =
+* New feature added.
+
 = 1.0.3 - 20 Oct 2024 =
 * Fix the issue.
 
@@ -149,6 +152,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 
 == Upgrade Notice ==
+
+= 1.0.4 - 13 Nov 2024 =
+* New feature added.
 
 = 1.0.1 =
 * Add a New Theme
