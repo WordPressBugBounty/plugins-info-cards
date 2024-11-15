@@ -4,7 +4,7 @@
  * Description:       Create beautiful cards with text and image.
  * Requires at least: 5.8
  * Requires PHP:      7.1
- * Version:           1.0.4
+ * Version:           1.0.5
  * Author:            bPlugins
  * Author URI:        http://bplugins.com
  * License:           GPL-2.0-or-later
@@ -15,7 +15,7 @@
 if ( !defined( 'ABSPATH' ) ) { exit; }
 
 // Constant
-define( 'ICB_VERSION', 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.4' );
+define( 'ICB_VERSION', 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.5' );
 define( 'ICB_DIR', plugin_dir_url( __FILE__ ) );
 
 function icbCardsEnqueueBlockAssets(){
