@@ -4,7 +4,7 @@ Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, cards, gutenberg, info, section  
 Buy me a coffee: https://www.buymeacoffee.com/abuhayat
 Requires at least: 5.9+
-Tested up to: 6.8
+Tested up to: 6.8 
 Stable tag: 1.0.7
 Requires PHP: 7.1
 License: GPLv3 or later
