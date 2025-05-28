@@ -3,9 +3,9 @@ Contributors: bplugins, abuhayat, btechnologies
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, cards, gutenberg, info, section  
 Buy me a coffee: https://www.buymeacoffee.com/abuhayat
-Requires at least: 5.9+
-Tested up to: 6.8 
-Stable tag: 1.0.7
+Requires at least: 6.5+
+Tested up to: 6.8.1
+Stable tag: 1.0.8
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -134,6 +134,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 == Changelog ==
 
+= 1.0.8 - 27 May, 2025 =
+* Card text decoration problem fixed.
+
 = 1.0.7 - 25 April, 2025 =
 * Compatible with WordPress 6.8
 
@@ -161,6 +164,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 
 == Upgrade Notice ==
+
+= 1.0.8 - 27 May, 2025 =
+* Card text decoration problem fixed.
 
 = 1.0.7 - 25 April, 2025 =
 * Compatible with WordPress 6.8;
