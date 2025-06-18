@@ -4,7 +4,7 @@
  * Description:       Create beautiful cards with text and image.
  * Requires at least: 5.8
  * Requires PHP:      7.1
- * Version:           1.0.9
+ * Version:           1.0.10
  * Author:            bPlugins
  * Author URI:        http://bplugins.com
  * License:           GPL-2.0-or-later
@@ -36,7 +36,7 @@ class BPICB_Info_Cards{
 
     private function constants_define() {
         // Constant
-        define( 'ICB_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.9' );
+        define( 'ICB_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.10' );
         define( 'ICB_DIR', plugin_dir_url( __FILE__ ) );
     }
 
