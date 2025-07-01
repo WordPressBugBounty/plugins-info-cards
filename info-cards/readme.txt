@@ -5,7 +5,7 @@ Tags: block, cards, gutenberg, info, section
 Buy me a coffee: https://www.buymeacoffee.com/abuhayat
 Requires at least: 6.5+
 Tested up to: 6.8.1
-Stable tag: 1.0.10
+Stable tag: 1.0.11
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -134,6 +134,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 == Changelog ==
 
+= 1.0.11 - 1 July, 2025 =
+* Resolved the button hide issue;
+
 = 1.0.10 - 18 June, 2025 =
 * Resolved breakpoint issues for desktop, tablet, and mobile devices;
 
@@ -170,6 +173,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 
 == Upgrade Notice ==
+
+= 1.0.11 - 1 July, 2025 =
+* Resolved the button hide issue;
 
 = 1.0.10 - 18 June, 2025 =
 * Resolved breakpoint issues for desktop, tablet, and mobile devices;

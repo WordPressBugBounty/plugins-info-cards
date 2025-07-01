@@ -2,34 +2,22 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "name": "icb/cards",
-  "version": "1.0.3",
+  "version": "0.1.0",
   "title": "Info Cards",
   "category": "widgets",
   "icon": "smiley",
-  "description": "Create beautiful cards with text and image",
+  "description": "info-card block plugin",
   "textdomain": "info-cards",
   "attributes": {
-    "iconDetails": {
-      "type": "string",
-      "default": "arrow_outward"
-    },
-    "iconSize": {
-      "type": "number",
-      "default": 24
-    },
-    "iconColor": {
-      "type": "string",
-      "default": "#F2E8C6"
-    },
-    "iconbgColor": {
-      "type": "string",
-      "default": "#982B1C"
-    },
     "className": {
       "type": "string",
       "default": ""
     },
     "align": {
+      "type": "string",
+      "default": ""
+    },
+    "clientId": {
       "type": "string",
       "default": ""
     },
@@ -41,30 +29,36 @@
             "color": "#fff"
           },
           "img": "",
-          "title": "Title of the card 1",
-          "desc": "Description of the card 1",
+          "title": "Title of the 1 number card",
+          "desc": "Description of the 1 number card",
           "btnLabal": "Button",
-          "btnUrl": "#"
+          "btnUrl": "#",
+          "isBtn": true,
+          "cardUrl": ""
         },
         {
           "background": {
             "color": "#fff"
           },
           "img": "",
-          "title": "Title of the card 2",
-          "desc": "Description of the card 2",
+          "title": "Title of the 2 number card",
+          "desc": "Description of the 2 number card",
           "btnLabal": "Button",
-          "btnUrl": "#"
+          "btnUrl": "#",
+          "isBtn": true,
+          "cardUrl": ""
         },
         {
           "background": {
             "color": "#fff"
           },
           "img": "",
-          "title": "Title of the card 3",
-          "desc": "Description of the card 3",
+          "title": "Title of the 3 number card",
+          "desc": "Description of the 3 number card",
           "btnLabal": "Button",
-          "btnUrl": "#"
+          "btnUrl": "#",
+          "isBtn": true,
+          "cardUrl": ""
         }
       ]
     },
@@ -96,6 +90,10 @@
       "type": "boolean",
       "default": true
     },
+    "isTab": {
+      "type": "boolean",
+      "default": false
+    },
     "imgHeight": {
       "type": "string",
       "default": "200px"
@@ -107,7 +105,7 @@
     "background": {
       "type": "object",
       "default": {
-        "color": "#FFFFFF00"
+        "color": "#0000"
       }
     },
     "padding": {
@@ -165,7 +163,7 @@
     },
     "titleColor": {
       "type": "string",
-      "color": "#000"
+      "default": "#000"
     },
     "descTypo": {
       "type": "object",
@@ -175,7 +173,7 @@
     },
     "descColor": {
       "type": "string",
-      "color": "#000"
+      "default": "#000"
     },
     "btnTypo": {
       "type": "object",
@@ -234,7 +232,8 @@
           "title": "Title of the 1 number card",
           "desc": "Description of the 1 number card",
           "btnLabal": "Button",
-          "btnUrl": "#"
+          "btnUrl": "#",
+          "isBtn": true
         }
       ],
       "columns": {
@@ -244,9 +243,15 @@
       }
     }
   },
-  "editorScript": "file:./index.js",
-  "editorStyle": "file:./index.css",
-  "style": "file:./view.css",
+  "editorScript": [
+    "file:./index.js"
+  ],
+  "editorStyle": [
+    "file:./index.css"
+  ],
+  "style": [
+    "file:./view.css"
+  ],
   "render": "file:./render.php",
   "viewScript": "file:./view.js"
 }
