@@ -1,6 +1,6 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
-  "apiVersion": 3,
+  "apiVersion": 2,
   "name": "icb/cards",
   "version": "0.1.0",
   "title": "Info Cards",
@@ -212,6 +212,88 @@
     "btnRadius": {
       "type": "string",
       "default": "8px"
+    },
+    "productsInfo": {
+      "type": "array",
+      "default": [
+        {
+          "title": "Alienware Gaming Laptop",
+          "description": "Alienware Laptop is one of the best Gaming Laptops. Every gamer loves it.",
+          "variant": [
+            "i3",
+            "i5",
+            "i6",
+            "i9"
+          ],
+          "image": "https://templates.bplugins.com/wp-content/uploads/2025/05/Alienware-Laptop.png",
+          "button": {
+            "text": "Buy Now",
+            "link": ""
+          }
+        },
+        {
+          "title": "Alienware Gaming Laptop",
+          "description": "Alienware Laptop is one of the best Gaming Laptops. Every gamer loves it.",
+          "variant": [
+            "i3",
+            "i5",
+            "i6",
+            "i9"
+          ],
+          "image": "https://templates.bplugins.com/wp-content/uploads/2025/05/Alienware-Laptop.png",
+          "button": {
+            "text": "Buy Now",
+            "link": ""
+          }
+        },
+        {
+          "title": "Alienware Gaming Laptop",
+          "description": "Alienware Laptop is one of the best Gaming Laptops. Every gamer loves it.",
+          "variant": [
+            "i3",
+            "i5",
+            "i6",
+            "i9"
+          ],
+          "image": "https://templates.bplugins.com/wp-content/uploads/2025/05/Alienware-Laptop.png",
+          "button": {
+            "text": "Buy Now",
+            "link": ""
+          }
+        }
+      ]
+    },
+    "styles": {
+      "type": "object",
+      "default": {}
+    },
+    "grabCardInfo": {
+      "type": "object",
+      "default": {
+        "image": "https://templates.bplugins.com/wp-content/uploads/2025/06/quest.webp",
+        "title": "Grab A Device",
+        "description": "Your journey into spatial starts now. Get Meta Horizon OS for yourself or power up your entire team.",
+        "button": {
+          "text": "Purchase a Meta Quest",
+          "link": "#"
+        }
+      }
+    },
+    "alignment": {
+      "type": "string",
+      "default": "center"
+    },
+    "options": {
+      "type": "object",
+      "default": {
+        "isOpenInNewTab": true,
+        "isVariantShow": true,
+        "isButtonShow": true,
+        "isVisibleCircle": true,
+        "isTagShow": true,
+        "isNewTabOpen": true,
+        "isHoverRotated": true
+      }
     }
   },
   "supports": {
@@ -244,7 +326,8 @@
     }
   },
   "editorScript": [
-    "file:./index.js"
+    "file:./index.js",
+    "wp-api"
   ],
   "editorStyle": [
     "file:./index.css"

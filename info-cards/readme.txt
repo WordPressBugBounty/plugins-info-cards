@@ -1,5 +1,5 @@
-=== Info Cards - Gutenberg block for creating Beautiful Cards===
-Contributors: bplugins, abuhayat, btechnologies
+=== Info Cards – Add Text and Media in Card Layouts===
+Contributors: bplugins, abuhayat,shihabshamim, freemius
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, cards, gutenberg, info, section  
 Buy me a coffee: https://www.buymeacoffee.com/abuhayat
@@ -130,12 +130,17 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 3. Theme 3
 4. Theme 4
 5. Theme 5
+6. Theme 6
+7. Theme 7
+8. Theme 8
+9. Theme 9
+10. Theme 10
 
 
 == Changelog ==
 
-= 1.0.11 - 1 July, 2025 =
-* Resolved the button hide issue;
+= 1.0.11 - 22 July, 2025 =
+* Resolved the button hide issue and added five new themes;
 
 = 1.0.10 - 18 June, 2025 =
 * Resolved breakpoint issues for desktop, tablet, and mobile devices;
@@ -175,7 +180,7 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 == Upgrade Notice ==
 
 = 1.0.11 - 1 July, 2025 =
-* Resolved the button hide issue;
+* Resolved the button hide issue and added five new themes;
 
 = 1.0.10 - 18 June, 2025 =
 * Resolved breakpoint issues for desktop, tablet, and mobile devices;
