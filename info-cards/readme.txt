@@ -1,11 +1,11 @@
 === Info Cards – Add Text and Media in Card Layouts===
-Contributors: bplugins, abuhayat,shihabshamim, freemius
+Contributors: bplugins, abuhayat,shihabshamim
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, cards, gutenberg, info, section  
 Buy me a coffee: https://www.buymeacoffee.com/abuhayat
 Requires at least: 6.5+
 Tested up to: 6.8.1
-Stable tag: 1.0.11
+Stable tag: 2.0.1
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -37,7 +37,7 @@ In conclusion, the Info Cards Block Plugin is an excellent choice for anyone loo
 -  Support links
 -  Typography 
 -  Responsive layout
--  Easy to use. 
+-  Easy to use
 
 
 
@@ -135,11 +135,15 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 8. Theme 8
 9. Theme 9
 10. Theme 10
+11. Theme 11
+12. Theme 12
 
 
 == Changelog ==
+= 2.0.1- 17 Aug, 2025 =
+* Fatal error resolved;
 
-= 1.0.11 - 22 July, 2025 =
+= 2.0.0 - 14 Aug, 2025 =
 * Resolved the button hide issue and added five new themes;
 
 = 1.0.10 - 18 June, 2025 =

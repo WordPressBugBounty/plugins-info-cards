@@ -3,7 +3,7 @@
 
 if ( !defined( 'ABSPATH' ) ) { exit; }
 
-class UpgradePage{
+class InfoCards_UpgradePage{
 	public function __construct(){
 		add_action( 'admin_menu', [$this, 'adminMenu'] );
 	}
@@ -23,4 +23,4 @@ class UpgradePage{
 		<iframe src='https://checkout.freemius.com/plugin/17727/plan/29468/' width='100%' frameborder='0' style='width: calc(100% - 20px); height: calc(100vh - 60px); margin-top: 15px;'></iframe>
 	<?php }
 }
-new UpgradePage;
+new InfoCards_UpgradePage;
