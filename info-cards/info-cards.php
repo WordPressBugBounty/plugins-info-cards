@@ -5,7 +5,7 @@
  * Description:       Create beautiful cards with text and image.
  * Requires at least: 5.8
  * Requires PHP:      7.1
- * Version:           2.0.1
+ * Version:           2.0.2
  * Author:            bPlugins
  * Author URI:        http://bplugins.com
  * License:           GPL-2.0-or-later
@@ -74,7 +74,7 @@ if ( function_exists( 'ic_fs' ) ) {
         // Signal that SDK was initiated.
         do_action( 'ic_fs_loaded' );
     }
-    function ssbIsPremium() {
+    function bpicbIsPremium() {
         return ( INFO_CARDS_PRO ? ic_fs()->can_use_premium_code() : false );
     }
 
@@ -87,26 +87,26 @@ if ( function_exists( 'ic_fs' ) ) {
             add_action( 'init', [$this, 'onInit'] );
             add_action( 'enqueue_block_assets', [$this, 'load_unicorn_studio_script'] );
             // freemius
-            add_action( 'wp_ajax_ssbPremiumChecker', [$this, 'ssbPremiumChecker'] );
-            add_action( 'wp_ajax_nopriv_ssbPremiumChecker', [$this, 'ssbPremiumChecker'] );
+            add_action( 'wp_ajax_bpicbPremiumChecker', [$this, 'bpicbPremiumChecker'] );
+            add_action( 'wp_ajax_nopriv_bpicbPremiumChecker', [$this, 'bpicbPremiumChecker'] );
             add_action( 'admin_init', [$this, 'registerSettings'] );
             add_action( 'rest_api_init', [$this, 'registerSettings'] );
         }
 
-        function ssbPremiumChecker() {
+        function bpicbPremiumChecker() {
             $nonce = sanitize_text_field( $_POST['_wpnonce'] ?? null );
             if ( !wp_verify_nonce( $nonce, 'wp_ajax' ) ) {
                 wp_send_json_error( 'Invalid Request' );
             }
             wp_send_json_success( [
-                'isPipe' => ssbIsPremium(),
+                'isPipe' => bpicbIsPremium(),
             ] );
         }
 
         function registerSettings() {
-            register_setting( 'ssbUtils', 'ssbUtils', [
+            register_setting( 'bpicbUtils', 'bpicbUtils', [
                 'show_in_rest'      => [
-                    'name'   => 'ssbUtils',
+                    'name'   => 'bpicbUtils',
                     'schema' => [
                         'type' => 'string',
                     ],

@@ -8,10 +8,10 @@ if(!class_exists('icbAdminMenu')) {
             add_action( 'admin_enqueue_scripts', [$this, 'adminEnqueueScripts'] );
             add_action( 'admin_menu', [$this, 'adminMenu'] );
 
-            add_action( 'wp_ajax_get_popular_plugins', [$this, 'get_popular_plugins'] );
-            add_action( 'wp_ajax_get_active_plugins', [$this, 'get_active_plugins'] );
-            add_action( 'admin_notices', [$this, 'display_activation_notice'] );
-            add_action( 'wp_ajax_activated_plugin', [$this, 'activated_plugin'] );
+            add_action( 'wp_ajax_bpicb_get_popular_plugins', [$this, 'bpicb_get_popular_plugins'] );
+            add_action( 'wp_ajax_bpicb_get_active_plugins', [$this, 'bpicb_get_active_plugins'] );
+            add_action( 'admin_notices', [$this, 'bpicb_display_activation_notice'] );
+            add_action( 'wp_ajax_bpicb_activated_plugin', [$this, 'bpicb_activated_plugin'] );
              
         }
 
@@ -48,7 +48,7 @@ if(!class_exists('icbAdminMenu')) {
             <?php 
         }
 
-        public function get_popular_plugins () {
+        public function bpicb_get_popular_plugins () {
             if ( ! current_user_can( 'activate_plugins' ) ) {
                 wp_send_json_error( [ 'message' => 'You are not allowed to perform this action.' ], 403 );
             }
@@ -68,7 +68,7 @@ if(!class_exists('icbAdminMenu')) {
              wp_send_json_success($cached_plugins->plugins); 
         }
 
-        public function get_active_plugins() {
+        public function bpicb_get_active_plugins() {
              if ( ! current_user_can( 'activate_plugins' ) ) {
                 wp_send_json_error( [ 'message' => 'You are not allowed to perform this action.' ], 403 );
             }
@@ -94,7 +94,7 @@ if(!class_exists('icbAdminMenu')) {
             wp_send_json_success($installed_plugin_slugs);
         }
 
-        public function display_activation_notice() {
+        public function bpicb_display_activation_notice() {
             // Check if transient is set
             $plugin_slug = get_transient('bblocks_show_activation_notice');
 
@@ -126,7 +126,7 @@ if(!class_exists('icbAdminMenu')) {
             }
         }
 
-        public function activated_plugin() {
+        public function bpicb_activated_plugin() {
             if ( ! current_user_can( 'activate_plugins' ) ) {
                 wp_send_json_error( [ 'message' => 'You are not allowed to perform this action.' ], 403 );
             }

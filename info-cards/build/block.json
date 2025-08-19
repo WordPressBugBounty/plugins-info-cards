@@ -265,7 +265,9 @@
     },
     "styles": {
       "type": "object",
-      "default": {}
+      "default": {
+        "margin": "20px"
+      }
     },
     "grabCardInfo": {
       "type": "object",
