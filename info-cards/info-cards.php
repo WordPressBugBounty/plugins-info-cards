@@ -5,7 +5,7 @@
  * Description:       Create beautiful cards with text and image.
  * Requires at least: 5.8
  * Requires PHP:      7.1
- * Version:           2.0.2
+ * Version:           2.0.3
  * Author:            bPlugins
  * Author URI:        http://bplugins.com
  * License:           GPL-2.0-or-later
@@ -30,6 +30,7 @@ if ( function_exists( 'ic_fs' ) ) {
      * function_exists` CALL ABOVE TO PROPERLY WORK.
      */
     define( 'INFO_CARDS_PRO', file_exists( dirname( __FILE__ ) . '/freemius/start.php' ) );
+    define( 'ICB_DIR_PATH', plugin_dir_path( __FILE__ ) );
     if ( !function_exists( 'ic_fs' ) ) {
         // Create a helper function for easy SDK access.
         function ic_fs() {
@@ -78,6 +79,7 @@ if ( function_exists( 'ic_fs' ) ) {
         return ( INFO_CARDS_PRO ? ic_fs()->can_use_premium_code() : false );
     }
 
+    require_once ICB_DIR_PATH . '/inc/adminMenu.php';
     // my code
     class BPICB_Info_Cards {
         private static $instance;
@@ -131,7 +133,6 @@ if ( function_exists( 'ic_fs' ) ) {
             // Constant
             define( 'ICB_VERSION', ( isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.11' ) );
             define( 'ICB_DIR', plugin_dir_url( __FILE__ ) );
-            define( 'ICB_DIR_PATH', plugin_dir_path( __FILE__ ) );
         }
 
         public function onInit() {
@@ -151,8 +152,4 @@ if ( function_exists( 'ic_fs' ) ) {
     }
 
     BPICB_Info_Cards::get_instance();
-}
-require_once ICB_DIR_PATH . '/inc/adminMenu.php';
-if ( !INFO_CARDS_PRO ) {
-    require_once ICB_DIR_PATH . '/inc/upgradePage.php';
 }
