@@ -1,11 +1,11 @@
 === Info Cards – Add Text and Media in Card Layouts===
-Contributors: bplugins, abuhayat,shihabshamim, freemius
+Contributors: bplugins, abuhayat,shihabshamim,freemius
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, cards, gutenberg, info, section  
 Buy me a coffee: https://www.buymeacoffee.com/abuhayat
 Requires at least: 6.5+
 Tested up to: 6.8.1
-Stable tag: 2.0.3
+Stable tag: 2.0.4
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -27,7 +27,7 @@ With the Info Cards Block Plugin, you can create engaging and visually appealing
 In conclusion, the Info Cards Block Plugin is an excellent choice for anyone looking to create beautiful, informative cards within their WordPress content. Download the plugin today and start creating engaging content that will captivate your audience!
 
 
-= Features =
+= Free Features =
 
 -  Fully customizable
 -  Set custom color
@@ -38,6 +38,17 @@ In conclusion, the Info Cards Block Plugin is an excellent choice for anyone loo
 -  Typography 
 -  Responsive layout
 -  Easy to use
+
+= Pro Features =
+-  All Free features
+-  12+ ready-made themes
+- Advanced templates & layouts
+- More typography controls (font family, weight, spacing)
+- Hover & animation effects
+- Gradient & advanced color options
+- Border, padding, margin full control
+- Card shadows & depth effects
+- Priority updates & support
 
 
 
@@ -140,6 +151,8 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 
 == Changelog ==
+= 2.0.4- 29 Aug, 2025 =
+* Added a help page to this plugin.;
 = 2.0.2- 18 Aug, 2025 =
 * added new prefix;
 = 2.0.1- 17 Aug, 2025 =

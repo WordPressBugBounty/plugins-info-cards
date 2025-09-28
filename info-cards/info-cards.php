@@ -5,7 +5,7 @@
  * Description:       Create beautiful cards with text and image.
  * Requires at least: 5.8
  * Requires PHP:      7.1
- * Version:           2.0.3
+ * Version:           2.0.4
  * Author:            bPlugins
  * Author URI:        http://bplugins.com
  * License:           GPL-2.0-or-later
@@ -58,11 +58,8 @@ if ( function_exists( 'ic_fs' ) ) {
                     ),
                     'menu'                => array(
                         'slug'       => 'info-cards-dashboard',
-                        'first-path' => 'tools.php?page=info-cards-dashboard#/welcome',
+                        'first-path' => 'admin.php?page=info-cards-dashboard#/welcome',
                         'support'    => false,
-                        'parent'     => array(
-                            'slug' => 'tools.php',
-                        ),
                     ),
                 );
                 $ic_fs = ( INFO_CARDS_PRO ? fs_dynamic_init( $apbConfig ) : fs_lite_dynamic_init( $apbConfig ) );
@@ -79,6 +76,9 @@ if ( function_exists( 'ic_fs' ) ) {
         return ( INFO_CARDS_PRO ? ic_fs()->can_use_premium_code() : false );
     }
 
+    if ( INFO_CARDS_PRO && bpicbIsPremium() ) {
+        require_once ICB_DIR_PATH . '/inc/IcbShortcode.php';
+    }
     require_once ICB_DIR_PATH . '/inc/adminMenu.php';
     // my code
     class BPICB_Info_Cards {
@@ -131,7 +131,7 @@ if ( function_exists( 'ic_fs' ) ) {
 
         private function constants_define() {
             // Constant
-            define( 'ICB_VERSION', ( isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.11' ) );
+            define( 'ICB_VERSION', ( isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '2.0.4' ) );
             define( 'ICB_DIR', plugin_dir_url( __FILE__ ) );
         }
 
