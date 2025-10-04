@@ -5,7 +5,7 @@ Tags: block, cards, gutenberg, info, section
 Buy me a coffee: https://www.buymeacoffee.com/abuhayat
 Requires at least: 6.5+
 Tested up to: 6.8.1
-Stable tag: 2.0.5
+Stable tag: 2.0.6
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -40,6 +40,7 @@ In conclusion, the Info Cards Block Plugin is an excellent choice for anyone loo
 -  Easy to use
 
 = Pro Features =
+-  Universal Shortcodes: Compatible with all page builders.
 -  All Free features
 -  12+ ready-made themes
 - Advanced templates & layouts
