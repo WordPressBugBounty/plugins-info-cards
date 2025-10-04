@@ -5,9 +5,10 @@
  * Description:       Create beautiful cards with text and image.
  * Requires at least: 5.8
  * Requires PHP:      7.1
- * Version:           2.0.4
+ * Version:           2.0.5
  * Author:            bPlugins
  * Author URI:        http://bplugins.com
+ * Plugin URI:  https://wordpress.org/plugins/info-cards/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       info-cards
@@ -56,11 +57,18 @@ if ( function_exists( 'ic_fs' ) ) {
                         'days'               => 7,
                         'is_require_payment' => false,
                     ),
-                    'menu'                => array(
+                    'menu'                => ( INFO_CARDS_PRO ? array(
                         'slug'       => 'info-cards-dashboard',
                         'first-path' => 'admin.php?page=info-cards-dashboard#/welcome',
                         'support'    => false,
-                    ),
+                    ) : array(
+                        'slug'       => 'info-cards',
+                        'first-path' => 'tools.php?page=info-cards-dashboard#/welcome',
+                        'support'    => false,
+                        'parent'     => array(
+                            'slug' => 'tools.php',
+                        ),
+                    ) ),
                 );
                 $ic_fs = ( INFO_CARDS_PRO ? fs_dynamic_init( $apbConfig ) : fs_lite_dynamic_init( $apbConfig ) );
             }
@@ -78,8 +86,10 @@ if ( function_exists( 'ic_fs' ) ) {
 
     if ( INFO_CARDS_PRO && bpicbIsPremium() ) {
         require_once ICB_DIR_PATH . '/inc/IcbShortcode.php';
+        require_once ICB_DIR_PATH . '/inc/ProadminMenu.php';
+    } else {
+        require_once ICB_DIR_PATH . '/inc/IcbAdminMeno.php';
     }
-    require_once ICB_DIR_PATH . '/inc/adminMenu.php';
     // my code
     class BPICB_Info_Cards {
         private static $instance;
