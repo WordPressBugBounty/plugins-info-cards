@@ -1,22 +1,23 @@
 === Info Cards – Add Text and Media in Card Layouts===
-Contributors: bplugins, abuhayat,shihabshamim,freemius
+Contributors: bplugins, abuhayat, shihabshamim, freemius
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, cards, gutenberg, info, section  
 Buy me a coffee: https://www.buymeacoffee.com/abuhayat
 Requires at least: 6.5+
 Tested up to: 6.8.1
-Stable tag: 2.0.6
+Stable tag: 2.0.7
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Simple and easy way to create and display information cards anywhere. 
 
+
 == Description ==
 
-👉 [Plugin Demo](https://bblockswp.com/demo/info-cards) | [Documentation](https://bplugins.com/docs/)  👈
+**[Info Cards](https://bplugins.com/products/info-cards)** | **[Demos](https://bplugins.com/products/info-cards/#demos)** | **[Pricing](https://bplugins.com/products/info-cards/pricing/)**
 
-The Info Cards Block Plugin for WordPress allows you to create beautifully designed and informative cards within your content. With this plugin, you can present your content interactively and engagingly, making it easier for your audience to consume and understand your message.
+The Info Cards Block Plugin for WordPress allows you to create beautifully designed and informative cards within your content . With this plugin, you can present your content interactively and engagingly, making it easier for your audience to consume and understand your message.
 
 The plugin is a Gutenberg block, which means you can easily add it to your content using the Gutenberg editor. Once you've added the Info Card block, you can customize it with a variety of content types, including images, text, and links. You can also choose from a range of pre-designed templates or create your own custom layout to fit your unique branding.
 
@@ -29,27 +30,27 @@ In conclusion, the Info Cards Block Plugin is an excellent choice for anyone loo
 
 = Free Features =
 
--  Fully customizable
--  Set custom color
--  Build-in templates
--  Set Columns, column gap and row gap 
--  Use an image in the card
--  Support links
--  Typography 
--  Responsive layout
--  Easy to use
+-  Fully customizable.
+-  Set custom color.
+-  Build-in templates.
+-  Set Columns, column gap and row gap .
+-  Use an image in the card.
+-  Support links.
+-  Typography .
+-  Responsive layout.
+-  Easy to use.
 
 = Pro Features =
 -  Universal Shortcodes: Compatible with all page builders.
--  All Free features
--  12+ ready-made themes
-- Advanced templates & layouts
-- More typography controls (font family, weight, spacing)
-- Hover & animation effects
-- Gradient & advanced color options
-- Border, padding, margin full control
-- Card shadows & depth effects
-- Priority updates & support
+-  All Free features.
+-  12+ ready-made themes.
+- Advanced templates & layouts.
+- More typography controls (font family, weight, spacing).
+- Hover & animation effects.
+- Gradient & advanced color options.
+- Border, padding, margin full control.
+- Card shadows & depth effects.
+- Priority updates & support.
 
 
 
