@@ -4,8 +4,8 @@ Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, cards, gutenberg, info, section  
 Buy me a coffee: https://www.buymeacoffee.com/abuhayat
 Requires at least: 6.5+
-Tested up to: 6.8.1
-Stable tag: 2.0.7
+Tested up to: 6.9
+Stable tag: 2.0.8
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -71,7 +71,7 @@ In conclusion, the Info Cards Block Plugin is an excellent choice for anyone loo
 
 = ⭐ Check out the Parent Plugin of this plugin- =
 
-🔥 **[b Blocks](https://bblockswp.com/)** – Best gutenberg blocks collections for WordPress.
+🔥 **[bBlocks](https://bblockswp.com/)** – Best gutenberg blocks collections for WordPress.
 
 
 = ⭐ Check out our other WordPress Plugins- =
@@ -138,21 +138,24 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 
 == Screenshots ==
-1. Theme 1
-2. Theme 2
-3. Theme 3
-4. Theme 4
-5. Theme 5
-6. Theme 6
-7. Theme 7
-8. Theme 8
-9. Theme 9
-10. Theme 10
-11. Theme 11
-12. Theme 12
+1. Default
+2. Theme 1
+3. Theme 2
+4. Theme 3
+5. Theme 4
+6. Theme 5
+7. Theme 6
+8. Theme 7
+9. Theme 8
+10. Theme 9
+11. Theme 10
+12. Theme 11
+13. Theme 12
 
 
 == Changelog ==
+= 2.0.8- 15 March, 2026 =
+* Security Fix: Improved URL sanitization for button links to prevent XSS vulnerabilities.
 = 2.0.4- 29 Aug, 2025 =
 * Added a help page to this plugin.;
 = 2.0.2- 18 Aug, 2025 =

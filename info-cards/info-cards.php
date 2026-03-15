@@ -5,7 +5,7 @@
  * Description:       Create beautiful cards with text and image.
  * Requires at least: 5.8
  * Requires PHP:      7.1
- * Version:           2.0.7
+ * Version:           2.0.8
  * Author:            bPlugins
  * Author URI:        http://bplugins.com
  * Plugin URI:  https://wordpress.org/plugins/info-cards/
@@ -90,6 +90,9 @@ if ( function_exists( 'ic_fs' ) ) {
     } else {
         require_once ICB_DIR_PATH . '/inc/IcbAdminMeno.php';
     }
+    if ( INFO_CARDS_PRO ) {
+        require_once ICB_DIR_PATH . 'inc/LicenseActivation.php';
+    }
     // my code
     class BPICB_Info_Cards {
         private static $instance;
@@ -103,6 +106,18 @@ if ( function_exists( 'ic_fs' ) ) {
             add_action( 'wp_ajax_nopriv_bpicbPremiumChecker', [$this, 'bpicbPremiumChecker'] );
             add_action( 'admin_init', [$this, 'registerSettings'] );
             add_action( 'rest_api_init', [$this, 'registerSettings'] );
+            add_filter(
+                'default_title',
+                [$this, 'defaultTitle'],
+                10,
+                2
+            );
+            add_filter(
+                'default_content',
+                [$this, 'defaultContent'],
+                10,
+                2
+            );
         }
 
         function bpicbPremiumChecker() {
@@ -141,7 +156,7 @@ if ( function_exists( 'ic_fs' ) ) {
 
         private function constants_define() {
             // Constant
-            define( 'ICB_VERSION', ( isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '2.0.7' ) );
+            define( 'ICB_VERSION', ( isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '2.0.8' ) );
             define( 'ICB_DIR', plugin_dir_url( __FILE__ ) );
         }
 
@@ -157,6 +172,20 @@ if ( function_exists( 'ic_fs' ) ) {
                 '1.4.25',
                 true
             );
+        }
+
+        function defaultTitle( $title, $post ) {
+            if ( 'page' === $post->post_type && isset( $_GET['title'] ) ) {
+                return sanitize_text_field( wp_unslash( $_GET['title'] ) );
+            }
+            return $title;
+        }
+
+        function defaultContent( $content, $post ) {
+            if ( 'page' === $post->post_type && isset( $_GET['content'] ) ) {
+                return wp_unslash( $_GET['content'] );
+            }
+            return $content;
         }
 
     }

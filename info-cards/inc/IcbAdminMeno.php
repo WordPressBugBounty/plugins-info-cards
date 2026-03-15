@@ -27,7 +27,9 @@ class BPICBAdminMenu {
 			data-info='<?php echo esc_attr( wp_json_encode( [
 				'version' => ICB_VERSION,
 				'isPremium' => bpicbIsPremium(),
-				'hasPro' => INFO_CARDS_PRO
+				'hasPro' => INFO_CARDS_PRO,
+				'licenseActiveNonce' => wp_create_nonce('bplLicenseActive'),
+				'nonce' => wp_create_nonce( 'icbCreatePage' ),
 			] ) ); ?>'
 		></div>
 	<?php }
@@ -35,7 +37,7 @@ class BPICBAdminMenu {
 	function adminEnqueueScripts( $hook ) {
 		if( strpos( $hook, 'info-cards-dashboard' ) ){
 			wp_enqueue_style( 'icb-admin-dashboard', ICB_DIR . 'build/admin-dashboard.css', [], ICB_VERSION );
-			wp_enqueue_script( 'icb-admin-dashboard', ICB_DIR . 'build/admin-dashboard.js', [ 'react', 'react-dom' ], ICB_VERSION, true );
+			wp_enqueue_script( 'icb-admin-dashboard', ICB_DIR . 'build/admin-dashboard.js', [ 'react', 'react-dom',"wp-util" ], ICB_VERSION, true );
 			wp_set_script_translations( 'icb-admin-dashboard', 'click-to-copy', ICB_DIR_PATH . 'languages' );
 		}
 	}
