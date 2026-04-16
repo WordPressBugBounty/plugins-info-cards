@@ -10,7 +10,7 @@ Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Simple and easy way to create and display information cards anywhere. 
+Simple and easy way to create and display information cards  anywhere. 
 
 
 == Description ==

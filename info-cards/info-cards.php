@@ -48,7 +48,7 @@ if ( function_exists( 'ic_fs' ) ) {
                     'slug'                => 'info-cards',
                     'type'                => 'plugin',
                     'public_key'          => 'pk_a98bc1d71dc1e0a8bf0aede3af3e0',
-                    'is_premium'          => true,
+                    'is_premium'          => false,
                     'premium_suffix'      => 'Pro',
                     'has_premium_version' => true,
                     'has_addons'          => false,
