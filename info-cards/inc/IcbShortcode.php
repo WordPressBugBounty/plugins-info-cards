@@ -16,6 +16,14 @@ class ICB_Shortcode {
 	}
 
 	function onInit() {
+		// Mirror pdf-embed-block: premium users see the selector UI,
+		// free users get the default card block directly.
+		if ( icbIsPremium() ) {
+			$template = [ [ 'icb/info-cards-selector' ] ];
+		} else {
+			$template = [ [ 'icb/cards' ] ];
+		}
+
 		register_post_type( $this->post_type, [
 			'labels' => [
 				'name'               => __( 'ShortCodes', 'info-cards' ),
@@ -40,7 +48,7 @@ class ICB_Shortcode {
 			'capability_type'     => 'page',
 			'rewrite'             => [ 'slug' => 'apb' ],
 			'supports'            => [ 'title', 'editor' ],
-			'template'            => [ [ 'icb/cards' ] ],
+			'template'            => $template,
 			'template_lock'       => 'all',
 		] );
 	}

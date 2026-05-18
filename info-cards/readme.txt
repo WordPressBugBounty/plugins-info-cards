@@ -5,19 +5,21 @@ Tags: block, cards, gutenberg, info, section
 Buy me a coffee: https://www.buymeacoffee.com/abuhayat
 Requires at least: 6.5+
 Tested up to: 6.9
-Stable tag: 2.0.8
+Stable tag: 3.0.0
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Simple and easy way to create and display information cards  anywhere. 
+Simple and easy way to create and display information cards anywhere . 
 
 
 == Description ==
 
-**[Info Cards](https://bplugins.com/products/info-cards)** | **[Demos](https://bplugins.com/products/info-cards/#demos)** | **[Pricing](https://bplugins.com/products/info-cards/pricing/)**
 
 The Info Cards Block Plugin for WordPress allows you to create beautifully designed and informative cards within your content . With this plugin, you can present your content interactively and engagingly, making it easier for your audience to consume and understand your message.
+
+**[Info Cards](https://bplugins.com/products/info-cards)** | **[Demos](https://bplugins.com/products/info-cards/#demos)** | **[Pricing](https://bplugins.com/products/info-cards/pricing/)**
+
 
 The plugin is a Gutenberg block, which means you can easily add it to your content using the Gutenberg editor. Once you've added the Info Card block, you can customize it with a variety of content types, including images, text, and links. You can also choose from a range of pre-designed templates or create your own custom layout to fit your unique branding.
 
@@ -51,6 +53,7 @@ In conclusion, the Info Cards Block Plugin is an excellent choice for anyone loo
 - Border, padding, margin full control.
 - Card shadows & depth effects.
 - Priority updates & support.
+- Added 7+ new built-in blocks.
 
 
 
@@ -138,24 +141,31 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 
 == Screenshots ==
-1. Default
-2. Theme 1
-3. Theme 2
-4. Theme 3
-5. Theme 4
-6. Theme 5
-7. Theme 6
-8. Theme 7
-9. Theme 8
-10. Theme 9
-11. Theme 10
-12. Theme 11
-13. Theme 12
+1. Info Cards-Default
+2. Info Cards-Theme 1
+3. Info Cards-Theme 2
+4. Info Cards-Theme 3
+5. Info Cards-Theme 4
+6. Info Cards-Theme 5
+7. Info Cards-Theme 6
+8. Info Cards-Theme 7
+9. Info Cards-Theme 8
+10. Info Cards-Theme 9
+11. Info Cards-Theme 10
+12. Info Cards-Theme 11
+13. Info Cards-Theme 12
+14. 3D Fold Out Revel 
+15. Animated Gradient Cards
+16. Expandable Animated Card Slider
+17. Expanding Flex Cards 
+18. Magnifying Glass Cards 
+19. News Cards 
+20. Player Cards 
 
 
 == Changelog ==
-= 2.0.8- 15 March, 2026 =
-* Security Fix: Improved URL sanitization for button links to prevent XSS vulnerabilities.
+= 3.0.0- 18 May, 2026 =
+* Added 8+ new built-in blocks.
 = 2.0.4- 29 Aug, 2025 =
 * Added a help page to this plugin.;
 = 2.0.2- 18 Aug, 2025 =

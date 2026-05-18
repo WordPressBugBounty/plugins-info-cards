@@ -43,7 +43,7 @@ class ProBPICBMenu {
 			id='bpInfoCardsBlock'
 			data-info='<?php echo esc_attr( wp_json_encode( [
 				'version' => ICB_VERSION,
-				'isPremium' => bpicbIsPremium(),
+				'isPremium' => icbIsPremium(),
 				'hasPro' => INFO_CARDS_PRO,
 				'licenseActiveNonce' => wp_create_nonce('bplLicenseActive'),
 				'nonce' => wp_create_nonce( 'icbCreatePage' ),

@@ -1,0 +1,255 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "icb/animated-gradient-cards-pro",
+  "version": "1.0.0",
+  "title": "Animated Gradient Cards",
+  "category": "info-cards",
+  "description": "Short description of the Animated Gradient Cards",
+  "keywords": [
+    "Animated Gradient Cards"
+  ],
+  "textdomain": "info-cards",
+  "attributes": {
+    "alignment": {
+      "type": "string",
+      "default": "center"
+    },
+    "align": {
+      "type": "string",
+      "default": "wide"
+    },
+    "cardsData": {
+      "type": "array",
+      "default": [
+        {
+          "id": 1,
+          "image": {
+            "url": "https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/animated-border-cards/images/img-1.avif"
+          },
+          "title": "MCP, the new standard",
+          "description": "A protocol that lets AI tools speak the same language",
+          "linkUrl": "#",
+          "linkText": "Read more "
+        },
+        {
+          "id": 2,
+          "image": {
+            "url": "https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/animated-border-cards/images/img-2.avif"
+          },
+          "title": "AI that adapts",
+          "description": "Systems that learn your context and stay one step ahead",
+          "linkUrl": "#",
+          "linkText": "Read more"
+        },
+        {
+          "id": 3,
+          "image": {
+            "url": "https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/animated-border-cards/images/img-3.avif"
+          },
+          "title": "The interface is changing",
+          "description": "AI moves into the workspace uniting tools and data",
+          "linkUrl": "#",
+          "linkText": "Read more"
+        }
+      ]
+    },
+    "styles": {
+      "type": "object",
+      "default": {
+        "container": {
+          "bg": {},
+          "padding": {
+            "mobile": {
+              "top": "",
+              "bottom": "",
+              "left": "",
+              "right": ""
+            },
+            "tablet": {
+              "top": "",
+              "bottom": "",
+              "left": "",
+              "right": ""
+            },
+            "desktop": {
+              "top": "",
+              "bottom": "",
+              "left": "",
+              "right": ""
+            }
+          },
+          "margin": {
+            "mobile": {
+              "top": "",
+              "bottom": "",
+              "left": "",
+              "right": ""
+            },
+            "tablet": {
+              "top": "",
+              "bottom": "",
+              "left": "",
+              "right": ""
+            },
+            "desktop": {
+              "top": "",
+              "bottom": "",
+              "left": "",
+              "right": ""
+            }
+          },
+          "radius": {
+            "top": "",
+            "bottom": "",
+            "left": "",
+            "right": ""
+          },
+          "width": "100%",
+          "alignment": "center"
+        },
+        "card": {
+          "padding": {
+            "top": "1px",
+            "bottom": "1px",
+            "left": "1px",
+            "right": "1px"
+          },
+          "radius": {
+            "top": "22px",
+            "bottom": "22px",
+            "left": "22px",
+            "right": "22px"
+          },
+          "bordered": {
+            "background": "conic-gradient(from var(--gradient-angle) in lch, color(display-p3 25% 25% 100%), color(display-p3 100% 85% 30%), color(display-p3 25% 25% 100%)) border-box"
+          }
+        },
+        "content": {
+          "overlay": {
+            "type": "gradient",
+            "gradient": "linear-gradient(to bottom, transparent 0%, transparent 40%, oklch(100% 0 271 / 80%) 65%, oklch(100% 0 271 / 95%) 85%, oklch(100% 0 271) 100%)"
+          }
+        },
+        "title": {
+          "margin": {
+            "top": "",
+            "bottom": "",
+            "left": "",
+            "right": ""
+          },
+          "color": "#000000",
+          "typo": {
+            "fontFamily": "",
+            "fontCategory": "",
+            "fontWeight": "500",
+            "fontVariant": "500",
+            "isUploadFont": false,
+            "fontSize": {
+              "desktop": 21,
+              "tablet": 21,
+              "mobile": 21
+            },
+            "fontStyle": "normal",
+            "textTransform": "none",
+            "textDecoration": "none",
+            "lineHeight": "",
+            "letterSpace": "0px"
+          }
+        },
+        "description": {
+          "margin": {
+            "top": "",
+            "bottom": "",
+            "left": "",
+            "right": ""
+          },
+          "color": "#000000",
+          "typo": {
+            "fontFamily": "",
+            "fontCategory": "",
+            "fontWeight": "",
+            "fontVariant": "",
+            "isUploadFont": false,
+            "fontSize": {
+              "desktop": 16,
+              "tablet": 16,
+              "mobile": 16
+            },
+            "fontStyle": "normal",
+            "textTransform": "none",
+            "textDecoration": "none",
+            "lineHeight": "",
+            "letterSpace": "0px"
+          }
+        },
+        "button": {
+          "color": "#a62138",
+          "icon": {
+            "gap": "6px",
+            "size": "25px"
+          },
+          "typo": {
+            "fontFamily": "",
+            "fontCategory": "",
+            "fontWeight": "",
+            "fontVariant": "",
+            "isUploadFont": false,
+            "fontSize": {
+              "desktop": 18,
+              "tablet": 18,
+              "mobile": 18
+            },
+            "fontStyle": "normal",
+            "textTransform": "none",
+            "textDecoration": "none",
+            "lineHeight": "",
+            "letterSpace": "0px"
+          }
+        },
+        "layouts": {
+          "column": {
+            "desktop": 3,
+            "tablet": 2,
+            "mobile": 1
+          },
+          "columnGap": {
+            "desktop": 32,
+            "tablet": 32,
+            "mobile": 32
+          },
+          "rowGap": {
+            "desktop": 32,
+            "tablet": 32,
+            "mobile": 32
+          }
+        }
+      }
+    },
+    "options": {
+      "type": "object",
+      "default": {
+        "icon": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M5 12H19M19 12L13 6M19 12L13 18\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+        "isTitle": true,
+        "isDescription": true,
+        "isOpenLink": true,
+        "isButton": true
+      }
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false
+  },
+  "example": {
+    "attributes": {}
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./view.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
+}

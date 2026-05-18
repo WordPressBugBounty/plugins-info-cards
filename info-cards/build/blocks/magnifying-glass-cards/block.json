@@ -1,0 +1,218 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "icb/magnifying-glass-card-pro",
+  "version": "1.0.0",
+  "title": "Magnifying Glass Card",
+  "category": "info-cards",
+  "description": "Short description of the Magnifying Glass Card",
+  "keywords": [
+    "Magnifying Glass Card",
+    "card",
+    "magnifying",
+    "glass",
+    "zoom"
+  ],
+  "textdomain": "info-cards",
+  "attributes": {
+    "alignment": {
+      "type": "string",
+      "default": "center"
+    },
+    "align": {
+      "type": "string",
+      "default": "wide"
+    },
+    "cards": {
+      "type": "array",
+      "default": [
+        {
+          "image": "https://assets.codepen.io/4787486/man-in-suit-portrait.jpg",
+          "title": "You can't go wrong with the right shoes"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?raw=true&q=80&w=1000&auto=format&fit=crop",
+          "title": "Elegance is not standing out,"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?raw=true&q=80&w=1000&auto=format&fit=crop",
+          "title": "But being remembered"
+        }
+      ]
+    },
+    "styles": {
+      "type": "object",
+      "default": {
+        "columns": {
+          "desktop": 3,
+          "tablet": 2,
+          "mobile": 1
+        },
+        "rowGap": 20,
+        "columnGap": 20,
+        "bg": {},
+        "border": {},
+        "padding": {
+          "desktop": {
+            "top": "40px",
+            "right": "40px",
+            "bottom": "40px",
+            "left": "40px"
+          },
+          "tablet": {},
+          "mobile": {}
+        },
+        "margin": {
+          "desktop": {},
+          "tablet": {},
+          "mobile": {}
+        },
+        "card": {
+          "bg": {
+            "type": "gradient",
+            "gradient": "radial-gradient(circle at 85% 85%, #e9a5cd, #d65ca3, #721d4f, #000)"
+          },
+          "height": "560px",
+          "outline": {
+            "style": "solid",
+            "width": "3px",
+            "color": "#284242"
+          },
+          "radius": {
+            "top": "16px",
+            "right": "16px",
+            "bottom": "16px",
+            "left": "16px"
+          },
+          "shadow": [
+            {
+              "hOffset": "0.5rem",
+              "vOffset": "0.5rem",
+              "blur": "3rem",
+              "spreed": "-0.75rem",
+              "color": "rgba(0, 0, 0, 0.7)",
+              "isInset": false
+            }
+          ],
+          "textAlign": "center",
+          "title": {
+            "color": "#ffffff",
+            "typo": {
+              "fontFamily": "",
+              "fontCategory": "",
+              "fontWeight": "",
+              "fontVariant": "",
+              "isUploadFont": false,
+              "fontSize": {
+                "desktop": 37,
+                "tablet": 37,
+                "mobile": 37
+              },
+              "fontStyle": "normal",
+              "textTransform": "none",
+              "textDecoration": "none",
+              "lineHeight": "55px",
+              "letterSpace": ""
+            }
+          },
+          "image": {
+            "clip": {
+              "focus": 82,
+              "spotlight": 82,
+              "radius": 400
+            },
+            "brightness": 1,
+            "scale": 1,
+            "duration": 3,
+            "delay": 0.8
+          },
+          "glass": {
+            "size": 220,
+            "radius": 50,
+            "border": {
+              "style": "solid",
+              "width": "1px",
+              "color": "#ffffff26"
+            },
+            "shadow": [
+              {
+                "hOffset": "1px",
+                "vOffset": "2px",
+                "blur": "4px",
+                "spreed": "3px",
+                "color": "rgba(255, 255, 255, 0.3)",
+                "isInset": true
+              },
+              {
+                "hOffset": "1px",
+                "vOffset": "2px",
+                "blur": "3px",
+                "spreed": "2px",
+                "color": "rgba(255, 255, 255, 0.05)",
+                "isInset": true
+              },
+              {
+                "hOffset": "0px",
+                "vOffset": "-40px",
+                "blur": "47px",
+                "spreed": "-18px",
+                "color": "rgba(0, 0, 0, 0.2)",
+                "isInset": true
+              },
+              {
+                "hOffset": "-5px",
+                "vOffset": "5px",
+                "blur": "8px",
+                "spreed": "0px",
+                "color": "rgba(0, 0, 0, 0.7)",
+                "isInset": true
+              },
+              {
+                "hOffset": "-30px",
+                "vOffset": "15px",
+                "blur": "20px",
+                "spreed": "-10px",
+                "color": "rgba(0, 0, 0, 0.25)",
+                "isInset": true
+              },
+              {
+                "hOffset": "1px",
+                "vOffset": "3px",
+                "blur": "8px",
+                "spreed": "1px",
+                "color": "rgba(0, 0, 0, 0.4)",
+                "isInset": false
+              }
+            ],
+            "icon": {
+              "size": 24,
+              "color": "#ffffff"
+            }
+          }
+        }
+      }
+    },
+    "options": {
+      "type": "object",
+      "default": {
+        "isMagnifyingIconShow": true,
+        "isTitleShow": true
+      }
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false
+  },
+  "example": {
+    "attributes": {}
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./view.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
+}

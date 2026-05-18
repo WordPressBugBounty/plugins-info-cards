@@ -7,7 +7,7 @@ if ( !defined( 'ABSPATH' ) ) { exit; }
  * License Activation Handler
  * Handles Freemius license activation via AJAX
  */
-if( !class_exists( 'LicenseActivation' ) ){
+if( !class_exists( LicenseActivation::class ) ){
 	class LicenseActivation {
 		private $fs_callable;
 		private $fs;
@@ -255,7 +255,7 @@ if( !class_exists( 'LicenseActivation' ) ){
 			// Verify nonce
 			$nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
 
-			if ( !wp_verify_nonce( $nonce, 'bplLicenseActive' ) ) {
+			if ( !wp_verify_nonce( $nonce, 'icbLicenseActive' ) ) {
 				wp_send_json_error( [
 					'message' => 'Invalid security token. Please refresh the page and try again.'
 				] );

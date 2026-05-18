@@ -1,0 +1,248 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "icb/fold-out-reveal-pro",
+  "version": "1.0.0",
+  "title": "3D Fold Out Reveal",
+  "category": "info-cards",
+  "description": "3D Fold Out Reveal is a WordPress plugin that allows you to create 3D fold out reveal effects on your website.",
+  "keywords": [
+    "3D Fold Out Reveal",
+    "fold",
+    "reveal",
+    "cards"
+  ],
+  "textdomain": "info-cards",
+  "attributes": {
+    "alignment": {
+      "type": "string",
+      "default": "center"
+    },
+    "align": {
+      "type": "string",
+      "default": "wide"
+    },
+    "cards": {
+      "type": "array",
+      "default": [
+        {
+          "title": "Card title",
+          "subtitle": "Image from Picsum",
+          "image": "https://picsum.photos/seed/wave/300/225",
+          "description": "This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they’re not available etc.",
+          "btn": {
+            "link": "#",
+            "text": "Read More"
+          }
+        },
+        {
+          "title": "Card title",
+          "subtitle": "Image from Picsum",
+          "image": "https://picsum.photos/seed/beach/300/225",
+          "description": "This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they’re not available etc.",
+          "btn": {
+            "link": "#",
+            "text": "Read More"
+          }
+        },
+        {
+          "title": "Card title",
+          "subtitle": "Image from Picsum",
+          "image": "https://picsum.photos/seed/mountains/300/225",
+          "description": "This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they’re not available etc.",
+          "btn": {
+            "link": "#",
+            "text": "Read More"
+          }
+        },
+        {
+          "title": "Card title",
+          "subtitle": "Image from Picsum",
+          "image": "https://picsum.photos/seed/field/300/225",
+          "description": "This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they’re not available etc.",
+          "btn": {
+            "link": "#",
+            "text": "Read More"
+          }
+        }
+      ]
+    },
+    "options": {
+      "type": "object",
+      "default": {
+        "showTitle": true,
+        "showSubtitle": true,
+        "showDescription": true,
+        "showButton": true,
+        "showIcons": true,
+        "linkOpenInNewTab": true
+      }
+    },
+    "styles": {
+      "type": "object",
+      "default": {
+        "columns": {
+          "desktop": 4,
+          "tablet": 2,
+          "mobile": 1
+        },
+        "rowGap": 16,
+        "columnGap": 16,
+        "bg": {},
+        "border": {},
+        "padding": {
+          "desktop": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "0px",
+            "left": "0px"
+          },
+          "tablet": {},
+          "mobile": {}
+        },
+        "margin": {
+          "desktop": {},
+          "tablet": {},
+          "mobile": {}
+        },
+        "card": {
+          "bg": {
+            "type": "solid",
+            "color": "#ffffff"
+          },
+          "border": {},
+          "padding": {
+            "top": "0px",
+            "right": "15px",
+            "bottom": "10px",
+            "left": "15px"
+          },
+          "image": {
+            "height": "300px",
+            "objectFit": "cover"
+          },
+          "title": {
+            "color": "#4f585e",
+            "typo": {
+              "fontFamily": "",
+              "fontCategory": "",
+              "fontWeight": 700,
+              "fontVariant": "700",
+              "isUploadFont": false,
+              "fontSize": {
+                "desktop": 24,
+                "tablet": 24,
+                "mobile": 24
+              },
+              "fontStyle": "normal",
+              "textTransform": "none",
+              "textDecoration": "none",
+              "lineHeight": "",
+              "letterSpace": "-0.8px"
+            }
+          },
+          "subTitle": {
+            "color": "#4f585e",
+            "typo": {
+              "fontFamily": "",
+              "fontCategory": "",
+              "fontWeight": 600,
+              "fontVariant": "600",
+              "isUploadFont": false,
+              "fontSize": {
+                "desktop": 18,
+                "tablet": 18,
+                "mobile": 18
+              },
+              "fontStyle": "normal",
+              "textTransform": "none",
+              "textDecoration": "none",
+              "lineHeight": "",
+              "letterSpace": "-0.5px"
+            }
+          },
+          "description": {
+            "color": "#4f585e",
+            "typo": {
+              "fontFamily": "",
+              "fontCategory": "",
+              "fontWeight": "",
+              "fontVariant": "",
+              "isUploadFont": false,
+              "fontSize": {
+                "desktop": 14,
+                "tablet": 14,
+                "mobile": 14
+              },
+              "fontStyle": "normal",
+              "textTransform": "none",
+              "textDecoration": "none",
+              "lineHeight": "",
+              "letterSpace": ""
+            }
+          },
+          "btn": {
+            "bg": {
+              "type": "solid",
+              "color": "#0096a0"
+            },
+            "border": {
+              "top": "4px",
+              "right": "4px",
+              "bottom": "4px",
+              "left": "4px"
+            },
+            "padding": {
+              "top": "6px",
+              "right": "30px",
+              "bottom": "8px",
+              "left": "30px"
+            },
+            "typo": {
+              "fontFamily": "",
+              "fontCategory": "",
+              "fontWeight": "",
+              "fontVariant": "",
+              "isUploadFont": false,
+              "fontSize": {
+                "desktop": 14,
+                "tablet": 14,
+                "mobile": 14
+              },
+              "fontStyle": "normal",
+              "textTransform": "none",
+              "textDecoration": "none",
+              "lineHeight": "",
+              "letterSpace": ""
+            },
+            "color": "#ffffff"
+          },
+          "icon": {
+            "bg": {
+              "type": "solid",
+              "color": "#0096a0"
+            },
+            "color": "#ffffff",
+            "closeBg": "#ff6666",
+            "closeIconColor": "#ffffff"
+          }
+        }
+      }
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false
+  },
+  "example": {
+    "attributes": {}
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./view.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
+}

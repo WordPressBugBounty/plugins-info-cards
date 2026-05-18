@@ -5,10 +5,10 @@
  * Description:       Create beautiful cards with text and image.
  * Requires at least: 5.8
  * Requires PHP:      7.1
- * Version:           2.0.8
+ * Version:           3.0.0
  * Author:            bPlugins
  * Author URI:        http://bplugins.com
- * Plugin URI:  https://wordpress.org/plugins/info-cards/
+ * Plugin URI:        https://wordpress.org/plugins/info-cards/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       info-cards
@@ -18,6 +18,9 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 if ( function_exists( 'ic_fs' ) ) {
     register_activation_hook( __FILE__, function () {
+        if ( !function_exists( 'is_plugin_active' ) ) {
+            require_once ABSPATH . 'wp-admin/includes/plugin.php';
+        }
         if ( is_plugin_active( 'info-cards/info-cards.php' ) ) {
             deactivate_plugins( 'info-cards/info-cards.php' );
         }
@@ -26,24 +29,22 @@ if ( function_exists( 'ic_fs' ) ) {
         }
     } );
 } else {
-    /**
-     * DO NOT REMOVE THIS IF, IT IS ESSENTIAL FOR THE
-     * function_exists` CALL ABOVE TO PROPERLY WORK.
-     */
     define( 'INFO_CARDS_PRO', file_exists( dirname( __FILE__ ) . '/freemius/start.php' ) );
+    define( 'ICB_VERSION', ( isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '3.0.0' ) );
+    define( 'ICB_DIR_URL', plugin_dir_url( __FILE__ ) );
     define( 'ICB_DIR_PATH', plugin_dir_path( __FILE__ ) );
+    define( 'ICB_DIR', ICB_DIR_URL );
+    define( 'ICB_DIR_PATH_LEGACY', ICB_DIR_PATH );
     if ( !function_exists( 'ic_fs' ) ) {
-        // Create a helper function for easy SDK access.
         function ic_fs() {
             global $ic_fs;
-            // Include Freemius SDK.
             if ( !isset( $ic_fs ) ) {
                 if ( INFO_CARDS_PRO ) {
                     require_once dirname( __FILE__ ) . '/freemius/start.php';
                 } else {
                     require_once dirname( __FILE__ ) . '/freemius-lite/start.php';
                 }
-                $apbConfig = array(
+                $apbConfig = [
                     'id'                  => '17727',
                     'slug'                => 'info-cards',
                     'type'                => 'plugin',
@@ -53,142 +54,181 @@ if ( function_exists( 'ic_fs' ) ) {
                     'has_premium_version' => true,
                     'has_addons'          => false,
                     'has_paid_plans'      => true,
-                    'trial'               => array(
+                    'trial'               => [
                         'days'               => 7,
                         'is_require_payment' => false,
-                    ),
-                    'menu'                => ( INFO_CARDS_PRO ? array(
+                    ],
+                    'menu'                => [
                         'slug'       => 'info-cards-dashboard',
                         'first-path' => 'admin.php?page=info-cards-dashboard#/welcome',
                         'support'    => false,
-                    ) : array(
-                        'slug'       => 'info-cards',
-                        'first-path' => 'tools.php?page=info-cards-dashboard#/welcome',
-                        'support'    => false,
-                        'parent'     => array(
-                            'slug' => 'tools.php',
-                        ),
-                    ) ),
-                );
+                    ],
+                ];
                 $ic_fs = ( INFO_CARDS_PRO ? fs_dynamic_init( $apbConfig ) : fs_lite_dynamic_init( $apbConfig ) );
             }
             return $ic_fs;
         }
 
-        // Init Freemius.
         ic_fs();
-        // Signal that SDK was initiated.
         do_action( 'ic_fs_loaded' );
     }
-    function bpicbIsPremium() {
-        return ( INFO_CARDS_PRO ? ic_fs()->can_use_premium_code() : false );
-    }
-
-    if ( INFO_CARDS_PRO && bpicbIsPremium() ) {
-        require_once ICB_DIR_PATH . '/inc/IcbShortcode.php';
-        require_once ICB_DIR_PATH . '/inc/ProadminMenu.php';
-    } else {
-        require_once ICB_DIR_PATH . '/inc/IcbAdminMeno.php';
-    }
+    require_once ICB_DIR_PATH . 'inc/Helpers.php';
     if ( INFO_CARDS_PRO ) {
         require_once ICB_DIR_PATH . 'inc/LicenseActivation.php';
     }
-    // my code
-    class BPICB_Info_Cards {
-        private static $instance;
-
-        private function __construct() {
-            $this->constants_define();
-            add_action( 'init', [$this, 'onInit'] );
-            add_action( 'enqueue_block_assets', [$this, 'load_unicorn_studio_script'] );
-            // freemius
-            add_action( 'wp_ajax_bpicbPremiumChecker', [$this, 'bpicbPremiumChecker'] );
-            add_action( 'wp_ajax_nopriv_bpicbPremiumChecker', [$this, 'bpicbPremiumChecker'] );
-            add_action( 'admin_init', [$this, 'registerSettings'] );
-            add_action( 'rest_api_init', [$this, 'registerSettings'] );
-            add_filter(
-                'default_title',
-                [$this, 'defaultTitle'],
-                10,
-                2
-            );
-            add_filter(
-                'default_content',
-                [$this, 'defaultContent'],
-                10,
-                2
-            );
+    require_once ICB_DIR_PATH . 'inc/Init.php';
+    require_once ICB_DIR_PATH . 'inc/Admin.php';
+    require_once ICB_DIR_PATH . 'inc/RestApi.php';
+    require_once ICB_DIR_PATH . 'inc/Posts.php';
+    require_once ICB_DIR_PATH . 'inc/IcbShortcode.php';
+    new ICB\Init();
+    new ICB\Admin();
+    new ICB\RestApi();
+    // -----------------------------------------------------------------------
+    // Register Gutenberg Block Category
+    // -----------------------------------------------------------------------
+    add_filter(
+        'block_categories_all',
+        'icb_register_block_category',
+        10,
+        2
+    );
+    function icb_register_block_category(  $categories, $context  ) {
+        if ( !is_array( $categories ) ) {
+            $categories = [];
         }
-
-        function bpicbPremiumChecker() {
-            $nonce = sanitize_text_field( $_POST['_wpnonce'] ?? null );
-            if ( !wp_verify_nonce( $nonce, 'wp_ajax' ) ) {
-                wp_send_json_error( 'Invalid Request' );
+        // Prevent duplicate category
+        foreach ( $categories as $category ) {
+            if ( isset( $category['slug'] ) && 'info-cards' === $category['slug'] ) {
+                return $categories;
             }
-            wp_send_json_success( [
-                'isPipe' => bpicbIsPremium(),
-            ] );
         }
+        // Add category at top
+        array_unshift( $categories, [
+            'slug'  => 'info-cards',
+            'title' => __( 'Info Cards', 'info-cards' ),
+            'icon'  => null,
+        ] );
+        return $categories;
+    }
 
-        function registerSettings() {
-            register_setting( 'bpicbUtils', 'bpicbUtils', [
-                'show_in_rest'      => [
-                    'name'   => 'bpicbUtils',
-                    'schema' => [
-                        'type' => 'string',
-                    ],
-                ],
-                'type'              => 'string',
-                'default'           => wp_json_encode( [
-                    'nonce' => wp_create_nonce( 'wp_ajax' ),
-                ] ),
-                'sanitize_callback' => 'sanitize_text_field',
-            ] );
+    add_action( 'enqueue_block_assets', function () {
+        // wp_enqueue_script(
+        //     'unicorn-studio',
+        //     'https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.25/dist/unicornStudio.umd.js',
+        //     [],
+        //     '1.4.25',
+        //     true
+        // );
+        // wp_enqueue_script( 'mgc-jquery-cdn', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', [], '3.6.0', true );
+        // wp_enqueue_script( 'mgc-gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js', [], '3.11.3', true );
+        // wp_enqueue_script( 'mgc-splitting', 'https://unpkg.com/splitting/dist/splitting.min.js', [], null, true );
+        // wp_enqueue_style( 'owl-carousel', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css', [], '2.3.4' );
+        // wp_enqueue_style( 'owl-carousel-theme', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css', [ 'owl-carousel' ], '2.3.4' );
+        // wp_enqueue_script( 'owl-jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js', [], '3.7.1', true );
+        // wp_enqueue_script( 'owl-carousel-js', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js', [ 'owl-jquery' ], '2.3.4', true );
+        // wp_enqueue_script( 'owl-carousel-mousewheel', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.mousewheel.min.js', [ 'owl-carousel-js' ], '2.3.4', true );
+        // jQuery (single)
+        // wp_enqueue_script( 'jquery' );
+        // Core Dependencies for Blocks and AJAX
+        // wp_enqueue_script( 'wp-util' );
+        // wp_enqueue_script( 'wp-element' );
+        // Define ajaxurl for the frontend if it's not defined
+        if ( !is_admin() ) {
+            wp_add_inline_script( 'wp-util', 'var ajaxurl = "' . admin_url( 'admin-ajax.php' ) . '";', 'before' );
         }
-
-        public static function get_instance() {
-            if ( self::$instance ) {
-                return self::$instance;
-            }
-            self::$instance = new self();
-            return self::$instance;
-        }
-
-        private function constants_define() {
-            // Constant
-            define( 'ICB_VERSION', ( isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '2.0.8' ) );
-            define( 'ICB_DIR', plugin_dir_url( __FILE__ ) );
-        }
-
-        public function onInit() {
-            register_block_type( __DIR__ . '/build' );
-        }
-
-        function load_unicorn_studio_script() {
-            wp_enqueue_script(
-                'unicorn-studio',
-                'https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.25/dist/unicornStudio.umd.js',
-                array(),
-                '1.4.25',
-                true
-            );
-        }
-
-        function defaultTitle( $title, $post ) {
-            if ( 'page' === $post->post_type && isset( $_GET['title'] ) ) {
+        // Unicorn Studio
+        wp_enqueue_script(
+            'unicorn-studio',
+            'https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.25/dist/unicornStudio.umd.js',
+            [],
+            '1.4.25',
+            true
+        );
+        // GSAP + Splitting
+        wp_enqueue_script(
+            'jquery-cdn',
+            'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js',
+            [],
+            '3.7.1',
+            true
+        );
+        wp_enqueue_script(
+            'mgc-gsap',
+            'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js',
+            [],
+            '3.11.3',
+            true
+        );
+        wp_enqueue_script(
+            'mgc-splitting',
+            'https://unpkg.com/splitting/dist/splitting.min.js',
+            [],
+            null,
+            true
+        );
+        // Owl Carousel
+        wp_enqueue_style(
+            'owl-carousel',
+            'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css',
+            [],
+            '2.3.4'
+        );
+        wp_enqueue_style(
+            'owl-carousel-theme',
+            'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css',
+            ['owl-carousel'],
+            '2.3.4'
+        );
+        wp_enqueue_script(
+            'owl-carousel-js',
+            'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js',
+            ['jquery'],
+            '2.3.4',
+            true
+        );
+        wp_enqueue_script(
+            'owl-carousel-mousewheel',
+            'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.mousewheel.min.js',
+            ['owl-carousel-js'],
+            '2.3.4',
+            true
+        );
+    } );
+    // -----------------------------------------------------------------------
+    // Helpers for Gutenberg page creation via URL params
+    // -----------------------------------------------------------------------
+    add_filter(
+        'default_title',
+        function ( $title, $post = null ) {
+            if ( is_object( $post ) && isset( $post->post_type ) && 'page' === $post->post_type && isset( $_GET['title'] ) ) {
                 return sanitize_text_field( wp_unslash( $_GET['title'] ) );
             }
             return $title;
-        }
-
-        function defaultContent( $content, $post ) {
-            if ( 'page' === $post->post_type && isset( $_GET['content'] ) ) {
+        },
+        10,
+        2
+    );
+    add_filter(
+        'default_content',
+        function ( $content, $post = null ) {
+            if ( is_object( $post ) && isset( $post->post_type ) && 'page' === $post->post_type && isset( $_GET['content'] ) ) {
                 return wp_unslash( $_GET['content'] );
             }
             return $content;
+        },
+        10,
+        2
+    );
+    // -----------------------------------------------------------------------
+    // Plugin action links
+    // -----------------------------------------------------------------------
+    add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), function ( $links ) {
+        if ( !is_array( $links ) ) {
+            $links = [];
         }
-
-    }
-
-    BPICB_Info_Cards::get_instance();
+        $dashboard_link = '<a href="' . admin_url( 'admin.php?page=info-cards-dashboard' ) . '" style="color:#f18500;font-weight:bold;">Help And Demo</a>';
+        array_unshift( $links, $dashboard_link );
+        return $links;
+    } );
 }
