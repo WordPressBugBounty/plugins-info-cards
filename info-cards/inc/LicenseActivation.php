@@ -300,6 +300,6 @@ if( !class_exists( LicenseActivation::class ) ){
 }
 
 // Initialize only if Freemius is available
-if ( function_exists( 'ic_fs' ) ) {
-	new LicenseActivation( 'ic_fs' );
+if ( function_exists( 'info_cards_fs' ) ) {
+	new LicenseActivation( 'info_cards_fs' );
 }

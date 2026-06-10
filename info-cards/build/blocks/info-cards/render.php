@@ -3,12 +3,12 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 // Sanitize URLs in cards array to prevent Stored XSS
 if ( isset( $attributes['cards'] ) && is_array( $attributes['cards'] ) ) {
-    foreach ( $attributes['cards'] as &$card ) {
-        if ( isset( $card['btnUrl'] ) ) {
-            $card['btnUrl'] = esc_url_raw( $card['btnUrl'] );
+    foreach ( $attributes['cards'] as &$info_cards_card ) {
+        if ( isset( $info_cards_card['btnUrl'] ) ) {
+            $info_cards_card['btnUrl'] = esc_url_raw( $info_cards_card['btnUrl'] );
         }
-        if ( isset( $card['cardUrl'] ) ) {
-            $card['cardUrl'] = esc_url_raw( $card['cardUrl'] );
+        if ( isset( $info_cards_card['cardUrl'] ) ) {
+            $info_cards_card['cardUrl'] = esc_url_raw( $info_cards_card['cardUrl'] );
         }
     }
 }

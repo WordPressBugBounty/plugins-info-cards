@@ -1,6 +1,6 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
-  "apiVersion": 2,
+  "apiVersion": 3,
   "name": "icb/cards",
   "version": "0.1.0",
   "title": "Info Cards",
@@ -337,5 +337,8 @@
     "file:./view.css"
   ],
   "render": "file:./render.php",
-  "viewScript": "file:./view.js"
+  "viewScript": [
+    "file:./view.js",
+    "unicorn-studio"
+  ]
 }

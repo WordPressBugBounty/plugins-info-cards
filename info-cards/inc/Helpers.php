@@ -12,8 +12,8 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
  *
  * @return bool
  */
-if ( !function_exists('icbIsPremium') ) {
-    function icbIsPremium() {
-        return INFO_CARDS_PRO ? ic_fs()->can_use_premium_code() : false;
+if ( !function_exists('info_cards_is_premium') ) {
+    function info_cards_is_premium() {
+        return INFO_CARDS_PRO ? info_cards_fs()->can_use_premium_code() : false;
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace ICB;
+namespace info_cards;
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
@@ -10,7 +10,7 @@ class RestApi {
         add_action( 'wp_ajax_icbPremiumChecker',        [ $this, 'icbPremiumChecker' ] );
         add_action( 'wp_ajax_nopriv_icbPremiumChecker', [ $this, 'icbPremiumChecker' ] );
 
-        // ❌ REMOVE admin_init (IMPORTANT FIX)
+       
         add_action( 'rest_api_init', [ $this, 'registerSettings' ] );
         add_action( 'rest_api_init', [ $this, 'registerRoutes' ] );
 
@@ -19,9 +19,7 @@ class RestApi {
         add_action( 'wp_ajax_nopriv_ncbPosts',  [ $this, 'ncbPosts_callback' ] );
     }
 
-    // -------------------------------------------------------------------------
-    // Premium status checker (AJAX)
-    // -------------------------------------------------------------------------
+
 
     function icbPremiumChecker() {
         $nonce = sanitize_text_field( $_POST['_wpnonce'] ?? '' );
@@ -31,14 +29,11 @@ class RestApi {
         }
 
         wp_send_json_success( [
-            'isPipe' => icbIsPremium(),
+            'isPipe' => info_cards_is_premium(),
         ] );
     }
 
-    // -------------------------------------------------------------------------
-    // Register REST setting (FIXED)
-    // -------------------------------------------------------------------------
-
+ 
     function registerSettings() {
         register_setting( 'icbUtils', 'icbUtils', [
             'type' => 'object',
@@ -110,7 +105,7 @@ class RestApi {
     // -------------------------------------------------------------------------
 
     function registerRoutes() {
-        if ( ! icbIsPremium() ) {
+        if ( ! info_cards_is_premium() ) {
             return;
         }
 

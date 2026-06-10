@@ -1,6 +1,6 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
-  "apiVersion": 2,
+  "apiVersion": 3,
   "name": "icb/expandable-animated-card-slider-pro",
   "version": "1.0.0",
   "title": "Expandable Animated Card Slider",
@@ -321,7 +321,15 @@
   },
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
-  "style": "file:./view.css",
+  "style": [
+    "file:./view.css",
+    "owl-carousel",
+    "owl-carousel-theme"
+  ],
   "render": "file:./render.php",
+  "script": [
+    "owl-carousel-js",
+    "owl-carousel-mousewheel"
+  ],
   "viewScript": "file:./view.js"
 }

@@ -1,5 +1,5 @@
 <?php
-namespace ICB;
+namespace info_cards;
 
 if ( !defined( 'ABSPATH' ) ) { exit; }
 

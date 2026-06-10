@@ -1,6 +1,6 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
-  "apiVersion": 2,
+  "apiVersion": 3,
   "name": "icb/magnifying-glass-card-pro",
   "version": "1.0.0",
   "title": "Magnifying Glass Card",
@@ -214,5 +214,10 @@
   "editorStyle": "file:./index.css",
   "style": "file:./view.css",
   "render": "file:./render.php",
+  "script": [
+    "jquery",
+    "mgc-gsap",
+    "mgc-splitting"
+  ],
   "viewScript": "file:./view.js"
 }

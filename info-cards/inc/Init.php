@@ -1,17 +1,7 @@
 <?php
 
-/**
- * Init.php — Block registration for Info Cards.
- * Mirrors: pdf-embed-block/includes/rootPlugin/inc/Init.php
- *
- * ONLY responsible for:
- *   - Hooking into 'init'
- *   - Registering all blocks from build/blocks/
- *   - Respecting toggle ON/OFF (icbBlocks option)
- *   - Respecting pro/free status
- */
 
-namespace ICB;
+namespace info_cards;
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
@@ -58,7 +48,7 @@ class Init {
             $disabled_blocks = [];
         }
 
-        $is_premium = icbIsPremium();
+        $is_premium = info_cards_is_premium();
 
         foreach ( $all_blocks as $block_path ) {
             $block_name = basename( $block_path );

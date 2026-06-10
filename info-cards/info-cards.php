@@ -3,20 +3,20 @@
 /**
  * Plugin Name:       Info Cards
  * Description:       Create beautiful cards with text and image.
- * Requires at least: 5.8
+ * Requires at least: 6.5
  * Requires PHP:      7.1
- * Version:           3.0.0
+ * Version:           3.0.1
  * Author:            bPlugins
  * Author URI:        http://bplugins.com
  * Plugin URI:        https://wordpress.org/plugins/info-cards/
- * License:           GPL-2.0-or-later
- * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * License:          GPLv3 or later
+ * License URI:        http://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain:       info-cards
  */
 if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
-if ( function_exists( 'ic_fs' ) ) {
+if ( function_exists( 'info_cards_fs' ) ) {
     register_activation_hook( __FILE__, function () {
         if ( !function_exists( 'is_plugin_active' ) ) {
             require_once ABSPATH . 'wp-admin/includes/plugin.php';
@@ -29,20 +29,20 @@ if ( function_exists( 'ic_fs' ) ) {
         }
     } );
 } else {
-    define( 'INFO_CARDS_PRO', file_exists( dirname( __FILE__ ) . '/freemius/start.php' ) );
-    define( 'ICB_VERSION', ( isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '3.0.0' ) );
+    define( 'INFO_CARDS_PRO', file_exists( dirname( __FILE__ ) . '/vendor/freemius/start.php' ) );
+    define( 'ICB_VERSION', ( isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '3.0.1' ) );
     define( 'ICB_DIR_URL', plugin_dir_url( __FILE__ ) );
     define( 'ICB_DIR_PATH', plugin_dir_path( __FILE__ ) );
     define( 'ICB_DIR', ICB_DIR_URL );
     define( 'ICB_DIR_PATH_LEGACY', ICB_DIR_PATH );
-    if ( !function_exists( 'ic_fs' ) ) {
-        function ic_fs() {
-            global $ic_fs;
-            if ( !isset( $ic_fs ) ) {
+    if ( !function_exists( 'info_cards_fs' ) ) {
+        function info_cards_fs() {
+            global $info_cards_fs;
+            if ( !isset( $info_cards_fs ) ) {
                 if ( INFO_CARDS_PRO ) {
-                    require_once dirname( __FILE__ ) . '/freemius/start.php';
+                    require_once dirname( __FILE__ ) . '/vendor/freemius/start.php';
                 } else {
-                    require_once dirname( __FILE__ ) . '/freemius-lite/start.php';
+                    require_once dirname( __FILE__ ) . '/vendor/freemius-lite/start.php';
                 }
                 $apbConfig = [
                     'id'                  => '17727',
@@ -64,13 +64,13 @@ if ( function_exists( 'ic_fs' ) ) {
                         'support'    => false,
                     ],
                 ];
-                $ic_fs = ( INFO_CARDS_PRO ? fs_dynamic_init( $apbConfig ) : fs_lite_dynamic_init( $apbConfig ) );
+                $info_cards_fs = ( INFO_CARDS_PRO ? fs_dynamic_init( $apbConfig ) : fs_lite_dynamic_init( $apbConfig ) );
             }
-            return $ic_fs;
+            return $info_cards_fs;
         }
 
-        ic_fs();
-        do_action( 'ic_fs_loaded' );
+        info_cards_fs();
+        do_action( 'info_cards_fs_loaded' );
     }
     require_once ICB_DIR_PATH . 'inc/Helpers.php';
     if ( INFO_CARDS_PRO ) {
@@ -81,19 +81,19 @@ if ( function_exists( 'ic_fs' ) ) {
     require_once ICB_DIR_PATH . 'inc/RestApi.php';
     require_once ICB_DIR_PATH . 'inc/Posts.php';
     require_once ICB_DIR_PATH . 'inc/IcbShortcode.php';
-    new ICB\Init();
-    new ICB\Admin();
-    new ICB\RestApi();
+    new info_cards\Init();
+    new info_cards\Admin();
+    new info_cards\RestApi();
     // -----------------------------------------------------------------------
     // Register Gutenberg Block Category
     // -----------------------------------------------------------------------
     add_filter(
         'block_categories_all',
-        'icb_register_block_category',
+        'info_cards_register_block_category',
         10,
         2
     );
-    function icb_register_block_category(  $categories, $context  ) {
+    function info_cards_register_block_category(  $categories, $context  ) {
         if ( !is_array( $categories ) ) {
             $categories = [];
         }
@@ -112,92 +112,66 @@ if ( function_exists( 'ic_fs' ) ) {
         return $categories;
     }
 
-    add_action( 'enqueue_block_assets', function () {
-        // wp_enqueue_script(
-        //     'unicorn-studio',
-        //     'https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.25/dist/unicornStudio.umd.js',
-        //     [],
-        //     '1.4.25',
-        //     true
-        // );
-        // wp_enqueue_script( 'mgc-jquery-cdn', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', [], '3.6.0', true );
-        // wp_enqueue_script( 'mgc-gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js', [], '3.11.3', true );
-        // wp_enqueue_script( 'mgc-splitting', 'https://unpkg.com/splitting/dist/splitting.min.js', [], null, true );
-        // wp_enqueue_style( 'owl-carousel', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css', [], '2.3.4' );
-        // wp_enqueue_style( 'owl-carousel-theme', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css', [ 'owl-carousel' ], '2.3.4' );
-        // wp_enqueue_script( 'owl-jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js', [], '3.7.1', true );
-        // wp_enqueue_script( 'owl-carousel-js', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js', [ 'owl-jquery' ], '2.3.4', true );
-        // wp_enqueue_script( 'owl-carousel-mousewheel', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.mousewheel.min.js', [ 'owl-carousel-js' ], '2.3.4', true );
-        // jQuery (single)
-        // wp_enqueue_script( 'jquery' );
-        // Core Dependencies for Blocks and AJAX
-        // wp_enqueue_script( 'wp-util' );
-        // wp_enqueue_script( 'wp-element' );
-        // Define ajaxurl for the frontend if it's not defined
-        if ( !is_admin() ) {
-            wp_add_inline_script( 'wp-util', 'var ajaxurl = "' . admin_url( 'admin-ajax.php' ) . '";', 'before' );
-        }
-        // Unicorn Studio
-        wp_enqueue_script(
+    // -----------------------------------------------------------------------
+    // Register external CDN scripts/styles (NOT enqueue).
+    // Each block's block.json declares which handles it needs in viewScript/style,
+    // so WordPress will auto-enqueue them ONLY on pages where that block is used.
+    // -----------------------------------------------------------------------
+    add_action( 'init', function () {
+        // -- Unicorn Studio (used by: info-cards) --
+        wp_register_script(
             'unicorn-studio',
             'https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.25/dist/unicornStudio.umd.js',
             [],
             '1.4.25',
             true
         );
-        // GSAP + Splitting
-        wp_enqueue_script(
-            'jquery-cdn',
-            'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js',
-            [],
-            '3.7.1',
-            true
-        );
-        wp_enqueue_script(
+        // -- GSAP (used by: magnifying-glass-cards) --
+        wp_register_script(
             'mgc-gsap',
             'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js',
             [],
             '3.11.3',
             true
         );
-        wp_enqueue_script(
+        // -- Splitting.js (used by: magnifying-glass-cards) --
+        wp_register_script(
             'mgc-splitting',
             'https://unpkg.com/splitting/dist/splitting.min.js',
             [],
             null,
             true
         );
-        // Owl Carousel
-        wp_enqueue_style(
+        // -- Owl Carousel CSS (used by: expandable-animated-card-slider) --
+        wp_register_style(
             'owl-carousel',
             'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css',
             [],
             '2.3.4'
         );
-        wp_enqueue_style(
+        wp_register_style(
             'owl-carousel-theme',
             'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css',
             ['owl-carousel'],
             '2.3.4'
         );
-        wp_enqueue_script(
+        // -- Owl Carousel JS (used by: expandable-animated-card-slider) --
+        wp_register_script(
             'owl-carousel-js',
             'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js',
             ['jquery'],
             '2.3.4',
             true
         );
-        wp_enqueue_script(
+        wp_register_script(
             'owl-carousel-mousewheel',
             'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.mousewheel.min.js',
             ['owl-carousel-js'],
             '2.3.4',
             true
         );
-    } );
-    // -----------------------------------------------------------------------
-    // Helpers for Gutenberg page creation via URL params
-    // -----------------------------------------------------------------------
+    }, 5 );
+    // priority 5 → runs before block registration (priority 10)
     add_filter(
         'default_title',
         function ( $title, $post = null ) {

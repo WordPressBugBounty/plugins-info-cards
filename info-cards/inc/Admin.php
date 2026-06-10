@@ -2,7 +2,7 @@
 
 
 
-namespace ICB;
+namespace info_cards;
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
@@ -53,7 +53,7 @@ class Admin {
             id='bpInfoCardsBlock'
             data-info='<?php echo esc_attr( wp_json_encode( [
                 'version'            => ICB_VERSION,
-                'isPremium'          => icbIsPremium(),
+                'isPremium'          => info_cards_is_premium(),
                 'hasPro'             => INFO_CARDS_PRO,
                 'licenseActiveNonce' => wp_create_nonce( 'icbLicenseActive' ),
                 'action'             => 'icbGetBlocks',
@@ -101,7 +101,7 @@ class Admin {
             'ICB_BLOCK_DATA',
             [
                 'disabledBlocks' => $disabled_blocks,
-                'isPremium'      => icbIsPremium(),
+                'isPremium'      => info_cards_is_premium(),
             ]
         );
     }

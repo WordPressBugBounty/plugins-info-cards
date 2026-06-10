@@ -3,7 +3,7 @@
 
 if ( !defined( 'ABSPATH' ) ) { exit; } 
 
-class ProBPICBMenu {
+class Info_Cards_Pro_Admin_Menu {
 	public function __construct() {
 		add_action( 'admin_menu', [ $this, 'adminMenu' ] );
 		add_action( 'admin_enqueue_scripts', [$this, 'adminEnqueueScripts'] );
@@ -43,7 +43,7 @@ class ProBPICBMenu {
 			id='bpInfoCardsBlock'
 			data-info='<?php echo esc_attr( wp_json_encode( [
 				'version' => ICB_VERSION,
-				'isPremium' => icbIsPremium(),
+				'isPremium' => info_cards_is_premium(),
 				'hasPro' => INFO_CARDS_PRO,
 				'licenseActiveNonce' => wp_create_nonce('bplLicenseActive'),
 				'nonce' => wp_create_nonce( 'icbCreatePage' ),
@@ -59,4 +59,4 @@ class ProBPICBMenu {
 		}
 	}
 }
-new ProBPICBMenu();
+new Info_Cards_Pro_Admin_Menu();
