@@ -6,7 +6,7 @@
   "title": "Info Cards",
   "category": "info-cards",
   "icon": "smiley",
-  "description": "info-card block plugin",
+  "description": "Info Cards – Add Text and Media in Card Layouts",
   "textdomain": "info-cards",
   "attributes": {
     "className": {
@@ -112,7 +112,7 @@
       "type": "object",
       "default": {
         "top": "0px",
-        "right": "0x",
+        "right": "0px",
         "bottom": "0px",
         "left": "0px"
       }

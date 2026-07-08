@@ -5,8 +5,8 @@ Tags: block, cards, gutenberg, info, section
 Buy me a coffee: https://www.buymeacoffee.com/abuhayat
 Requires at least: 6.5+
 Tested up to: 7.0
-Stable tag: 3.0.1
-Requires PHP: 7.1
+Stable tag: 3.0.2
+Requires PHP: 7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -164,6 +164,11 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 
 == Changelog ==
+= 3.0.2- 08 July, 2026 =
+* Add the Modern Dashboard
+= 3.0.1- 10 June, 2026 =
+* Added a modern and intuitive dashboard layout.
+* Fixed CDN loading issue on page load
 = 3.0.0- 18 May, 2026 =
 * Added 8+ new built-in blocks.
 = 2.0.4- 29 Aug, 2025 =
