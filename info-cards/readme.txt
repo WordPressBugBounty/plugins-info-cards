@@ -1,78 +1,82 @@
-=== Info Cards – present key information in elegant card layouts ===
+=== Info Cards – Add Text and Media in Card Layouts===
 Contributors: bplugins, abuhayat, shihabshamim, freemius
-Tags: cards, info, section, gutenberg, block
-Tested up to: 7.1
-Stable tag: 3.0.2
-Requires PHP: 7.4
-Requires at least: 6.5+
 Donate link: https://www.buymeacoffee.com/abuhayat
+Tags: block, cards, gutenberg, info, section  
+Buy me a coffee: https://www.buymeacoffee.com/abuhayat
+Requires at least: 6.5+
+Tested up to: 7.1
+Stable tag: 3.0.3
+Requires PHP: 7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Create beautiful information cards in the Gutenberg editor. Responsive card layouts with images, text, links, templates, and full styling control .
+Simple and easy way to create and display information cards anywhere . 
+
 
 == Description ==
 
-**Turn plain text into eye-catching info cards that make your content easier to scan, understand, and remember – no code required.**
+
+The Info Cards Block Plugin for WordPress allows you to create beautifully designed and informative cards within your content . With this plugin, you can present your content interactively and engagingly, making it easier for your audience to consume and understand your message.
 
 **[Info Cards](https://bplugins.com/products/info-cards)** | **[Demos](https://bplugins.com/products/info-cards/#demos)** | **[Pricing](https://bplugins.com/products/info-cards/pricing/)**
 
-### Why Info Cards?
 
-Walls of text lose readers. **Info Cards** is a Gutenberg block that lets you present content as beautifully designed, informative cards – combining images, text, and links in layouts your audience can consume at a glance.
+The plugin is a Gutenberg block, which means you can easily add it to your content using the Gutenberg editor. Once you've added the Info Card block, you can customize it with a variety of content types, including images, text, and links. You can also choose from a range of pre-designed templates or create your own custom layout to fit your unique branding.
 
-Choose from built-in templates or create your own custom layout to fit your branding. Set columns, gaps, colors, and typography from the block sidebar – no code or additional software needed, even if you have limited technical knowledge.
+The Info Cards Block Plugin is designed to be user-friendly, even for those with limited technical knowledge. You don't need to write any code or install any additional software to use it. Additionally, the plugin is fully responsive, ensuring that your Info Cards look great and function perfectly across all devices and screen sizes.
 
-Every card layout is fully responsive, so your content looks great and functions perfectly across all devices and screen sizes. Whether you're creating product cards, team member profiles, or informational sections, Info Cards helps your content stand out.
+With the Info Cards Block Plugin, you can create engaging and visually appealing content that will help you stand out in a crowded digital landscape. Whether you're creating product cards, team member profiles, or informational cards, this plugin is an essential tool for your WordPress site.
 
-### Free Features
+In conclusion, the Info Cards Block Plugin is an excellent choice for anyone looking to create beautiful, informative cards within their WordPress content. Download the plugin today and start creating engaging content that will captivate your audience!
 
-- **Fully Customizable:** Adjust every part of the card to match your site.
-- **Custom Colors:** Use your brand's colors throughout.
-- **Built-in Templates:** Start from ready-made card designs.
-- **Layout Control:** Set columns, column gap, and row gap.
-- **Image Support:** Use an image in each card.
-- **Link Support:** Make cards clickable with links.
-- **Typography:** Control the text styling of your cards.
-- **Responsive Layout:** Cards adapt to all devices and screen sizes.
-- **Easy to Use:** Add and customize cards straight from the block editor.
 
-### Pro Version
+= Free Features =
 
-[**Info Cards Pro**](https://bplugins.com/products/info-cards/pricing/) unlocks more designs and deeper styling control:
+-  Fully customizable.
+-  Set custom color.
+-  Build-in templates.
+-  Set Columns, column gap and row gap .
+-  Use an image in the card.
+-  Support links.
+-  Typography .
+-  Responsive layout.
+-  Easy to use.
 
-- **Universal Shortcodes:** Compatible with all page builders.
-- **12+ Ready-Made Themes:** Professionally designed card styles.
-- **Advanced Templates & Layouts:** More ways to arrange your cards.
-- **More Typography Controls:** Font family, weight, and spacing.
-- **Hover & Animation Effects:** Bring cards to life on interaction.
-- **Gradient & Advanced Color Options:** Richer backgrounds and accents.
-- **Full Box Control:** Border, padding, and margin settings.
-- **Card Shadows & Depth Effects:** Add dimension to your layouts.
-- **7+ New Built-in Blocks:** Extra card blocks to build with.
-- **Priority Updates & Support.**
+= Pro Features =
+-  Universal Shortcodes: Compatible with all page builders.
+-  All Free features.
+-  12+ ready-made themes.
+- Advanced templates & layouts.
+- More typography controls (font family, weight, spacing).
+- Hover & animation effects.
+- Gradient & advanced color options.
+- Border, padding, margin full control.
+- Card shadows & depth effects.
+- Priority updates & support.
+- Added 7+ new built-in blocks.
+- Added a new Analytics page to track block performance and activity.
 
-### How to Use
 
-1. Install and activate the **Info Cards** plugin.
-2. Go to the page or post where you want to embed the cards.
-3. Click the **+** button in the Gutenberg editor and search for **Info Cards**.
-4. Select the **Info Cards** block.
-5. Create and customize your cards, then publish. Enjoy!
 
-### Use Cases
+= How to use info cards =
+- Install the info cards plugin.
+- Go to the page/posts where you want to embed the info cards.
+- Search Info Cards by clicking on the + button on the Gutenberg block editor. 
+- Select Info Cards block
+- Create and customize the cards. 
+- Enjoy!
 
-- **Product Highlights:** Present features or products in scannable cards.
-- **Team Profiles:** Introduce team members with photo, name, and link.
-- **Service Sections:** Summarize what you offer in a clean grid.
-- **Informational Content:** Break long content into digestible cards.
+* For installation help click on Installation Tab
+
 
 = Feedback =
 - Liked that plugin? Hate it? Want a new feature? [Send me some feedback](mailto:support@bplugins.com 'Send feedback')
 
+
 = ⭐ Check out the Parent Plugin of this plugin- =
 
 🔥 **[bBlocks](https://bblockswp.com/)** – Best gutenberg blocks collections for WordPress.
+
 
 = ⭐ Check out our other WordPress Plugins- =
 
@@ -86,42 +90,39 @@ Every card layout is fully responsive, so your content looks great and functions
 
 🔥 **[3D Viewer](https://bplugins.com/products/3d-viewer)** – Display interactive 3D models on the webs.
 
+
 == Installation ==
 
-**From your WordPress dashboard (recommended):**
+= From Gutenberg Editor: =
+1. Go to the page/posts where you want to embed the review.
+2. Search 'Info Cards' by clicking on the + button on the Gutenberg block editor. 
+3. Gutenberg will suggest some of the related blocks from the block directory. 
+4. Click on the **Info Cards Block** by bPlugins to install and add the block. 
+5. Enjoy!
 
-1. Go to **Plugins → Add New**.
-2. Search for **"Info Cards"**.
-3. Click **Install Now**, then **Activate**.
-4. Add the **Info Cards** block to any post or page in the Gutenberg editor.
+= Through Plugins Manager  =
+1. Go to Plugins > Add New from the WordPress admin dashboard. 
+2. Search "Info Cards" In the search field.  
+3. Install the Info Cards plugin 
+4. Activate the plugin and Enjoy!
 
-**Manual installation:**
+= Manually: =
+1. Download the plugin zip file from wordpress.org website and upload the **business-review.zip**  to the **`/wp-content/plugins/`** directory
+2. Activate the plugin through the Plugins menu in WordPress
 
-1. Download the plugin zip file from WordPress.org.
-2. Upload the plugin to the `/wp-content/plugins/` directory, or upload the zip via **Plugins → Add New → Upload Plugin**.
-3. Activate the plugin through the **Plugins** menu in WordPress.
 
 == Frequently Asked Questions ==
 
-= What does "block plugin" mean? =
+= What does it mean by block plugin? =
 
-A block plugin adds additional Gutenberg blocks to the WordPress block editor.
+Block plugin add additonal gutenberg block into the Block editor.
 
-= Can I use my brand's colors? =
+= Do you offer the plugin customization service? =
 
-Yes, the cards are fully customizable, including custom colors and typography.
+Yes, If you need any service from us please email at support[https://bplugins.com]
 
-= Are there ready-made designs I can start from? =
-
-Yes. The free version includes built-in templates, and the Pro version adds 12+ ready-made themes plus advanced templates and layouts.
-
-= Do the cards work on mobile devices? =
-
-Yes. The layout is fully responsive, and you can control columns and gaps so cards look great on all screen sizes.
-
-= Can I use Info Cards with page builders other than Gutenberg? =
-
-The free version is a Gutenberg block. The Pro version adds universal shortcodes that are compatible with all page builders.
+= Can I use my brand's color? =
+Yes, Its a fully customizable.
 
 = Does it work with any WordPress theme? =
 
@@ -131,20 +132,16 @@ Yes, it will work with any standard WordPress theme.
 
 Yes, you can change block settings from the Gutenberg block editor's right sidebar.
 
-= How many times can I reuse the block? =
+= How many times can I reuse a block? =
 
-You can use the block an unlimited number of times.
-
-= Do you offer plugin customization services? =
-
-Yes. If you need any service from us, please contact [bPlugins support](https://bplugins.com).
+You can use unlimited times as you want.
 
 = Where can I get support? =
 
 You can post your questions on the [support forum here](https://wordpress.org/support/plugin/info-cards/)
 
-== Screenshots ==
 
+== Screenshots ==
 1. Info Cards-Default
 2. Info Cards-Theme 1
 3. Info Cards-Theme 2
@@ -158,16 +155,18 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 11. Info Cards-Theme 10
 12. Info Cards-Theme 11
 13. Info Cards-Theme 12
-14. 3D Fold Out Revel
+14. 3D Fold Out Revel 
 15. Animated Gradient Cards
 16. Expandable Animated Card Slider
-17. Expanding Flex Cards
-18. Magnifying Glass Cards
-19. News Cards
-20. Player Cards
+17. Expanding Flex Cards 
+18. Magnifying Glass Cards 
+19. News Cards 
+20. Player Cards 
+
 
 == Changelog ==
-
+= 3.0.3- 15 Sep, 2026 =
+* Added a new Analytics page to track block performance and activity.
 = 3.0.2- 08 July, 2026 =
 * Add the Modern Dashboard
 = 3.0.1- 10 June, 2026 =
@@ -218,6 +217,7 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 = 1.0.0 =
 * Initial Release
+
 
 == Upgrade Notice ==
 
