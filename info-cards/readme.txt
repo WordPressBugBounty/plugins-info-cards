@@ -5,7 +5,7 @@ Tags: block, cards, gutenberg, info, section
 Buy me a coffee: https://www.buymeacoffee.com/abuhayat
 Requires at least: 6.5+
 Tested up to: 7.1
-Stable tag: 3.0.3
+Stable tag: 3.0.4
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -41,6 +41,7 @@ In conclusion, the Info Cards Block Plugin is an excellent choice for anyone loo
 -  Typography .
 -  Responsive layout.
 -  Easy to use.
+- Added a new Analytics page to track block performance and activity.
 
 = Pro Features =
 -  Universal Shortcodes: Compatible with all page builders.
@@ -165,6 +166,11 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 
 == Changelog ==
+
+= 3.0.4- 01 Nov, 2026 =
+* Improved the Analytics page with card click tracking, 7D/30D/3M date ranges, a daily clicks chart and CSV export.
+* Added data retention settings and an option to clear analytics data.
+
 = 3.0.3- 15 Sep, 2026 =
 * Added a new Analytics page to track block performance and activity.
 = 3.0.2- 08 July, 2026 =

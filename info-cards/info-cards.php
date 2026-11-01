@@ -4,7 +4,7 @@
  * Description:       Create beautiful cards with text and image.
  * Requires at least: 6.5
  * Requires PHP:      7.4
- * Version:           3.0.3
+ * Version:           3.0.4
  * Author:            bPlugins
  * Author URI:        http://bplugins.com
  * Plugin URI:        https://wordpress.org/plugins/info-cards/
@@ -30,7 +30,7 @@ if ( function_exists( 'info_cards_fs' ) ) {
     } );
 } else {
 
-    define( 'ICB_VERSION',    isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '3.0.3' );
+    define( 'ICB_VERSION',    isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '3.0.4' );
     define( 'ICB_DIR_URL',    plugin_dir_url( __FILE__ ) );
     define( 'ICB_DIR_PATH',   plugin_dir_path( __FILE__ ) );
 
@@ -81,6 +81,8 @@ if ( function_exists( 'info_cards_fs' ) ) {
 
     require_once ICB_DIR_PATH . 'includes/utility/functions.php';
     require_once ICB_DIR_PATH . 'includes/rootPlugin/plugin.php';
+    require_once ICB_DIR_PATH . 'includes/class-infoCards-analytics.php';
+    new InfoCards_Analytics();
 
     // -----------------------------------------------------------------------
     // Plugin action links
