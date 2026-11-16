@@ -5,7 +5,7 @@ Tags: block, cards, gutenberg, info, section
 Buy me a coffee: https://www.buymeacoffee.com/abuhayat
 Requires at least: 6.5+
 Tested up to: 7.1
-Stable tag: 3.0.4
+Stable tag: 3.0.5
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -166,6 +166,11 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 
 == Changelog ==
+
+
+= 3.0.5- 06 Nov, 2026 =
+* Added Black Friday & Cyber Monday (BFCM) promotional banner.
+
 
 = 3.0.4- 01 Nov, 2026 =
 * Improved the Analytics page with card click tracking, 7D/30D/3M date ranges, a daily clicks chart and CSV export.

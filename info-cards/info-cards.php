@@ -4,7 +4,7 @@
  * Description:       Create beautiful cards with text and image.
  * Requires at least: 6.5
  * Requires PHP:      7.4
- * Version:           3.0.4
+ * Version:           3.0.5
  * Author:            bPlugins
  * Author URI:        http://bplugins.com
  * Plugin URI:        https://wordpress.org/plugins/info-cards/
@@ -30,7 +30,7 @@ if ( function_exists( 'info_cards_fs' ) ) {
     } );
 } else {
 
-    define( 'ICB_VERSION',    isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '3.0.4' );
+    define( 'ICB_VERSION',    isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '3.0.5' );
     define( 'ICB_DIR_URL',    plugin_dir_url( __FILE__ ) );
     define( 'ICB_DIR_PATH',   plugin_dir_path( __FILE__ ) );
 
@@ -82,17 +82,31 @@ if ( function_exists( 'info_cards_fs' ) ) {
     require_once ICB_DIR_PATH . 'includes/utility/functions.php';
     require_once ICB_DIR_PATH . 'includes/rootPlugin/plugin.php';
     require_once ICB_DIR_PATH . 'includes/class-infoCards-analytics.php';
+    require_once ICB_DIR_PATH . 'includes/class-icb-promo-banner.php';
+
     new InfoCards_Analytics();
 
     // -----------------------------------------------------------------------
     // Plugin action links
     // -----------------------------------------------------------------------
-    add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), function ( $links ) {
-        if ( ! is_array( $links ) ) {
-            $links = [];
-        }
-        $dashboard_link = '<a href="' . admin_url( 'admin.php?page=info-cards-dashboard' ) . '" style="color:#f18500;font-weight:bold;">Help And Demo</a>';
-        array_unshift( $links, $dashboard_link );
-        return $links;
-    } );
+function pluginActionLinks( $links, $file ) {
+    if ( plugin_basename( __FILE__ ) === $file ) {
+        $goProLink = 'https://bplugins.com/products/info-cards/pricing/?utm_source=admin&utm_medium=plugins&utm_campaign=bfcm2026';
+
+        $linkText = ( current_time( 'Y-m-d' ) > '2026-12-05' )
+            ? __( 'Upgrade to Pro', 'info-cards' )
+            : __( 'Upgrade to Pro & Save Up to 45% This Black Friday!', 'info-cards' );
+
+        $links['help-and-demos'] = sprintf(
+            '<a href="%s" target="_blank" rel="noopener noreferrer" style="%s">%s</a>',
+            esc_url( $goProLink ),
+            'color:#d63638;font-weight:bold;',
+            $linkText
+        );
+    }
+
+    return $links;
+}
+
+add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'pluginActionLinks', 10, 2 );
 }
